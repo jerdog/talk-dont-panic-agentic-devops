@@ -1,16 +1,19 @@
 ---
 # try also 'default' to start simple
-theme: seriph
+theme: wwt
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
 background: https://cover.sli.dev
 # some information about your slides (markdown enabled)
-title: Welcome to Slidev
+title: Don't Panic — A Hitchhiker's Guide to Agentic DevOps
 info: |
-  ## Slidev Starter Template
-  Presentation slides for developers.
+  ## Don't Panic — A Hitchhiker's Guide to Agentic DevOps
 
-  Learn more at [Sli.dev](https://sli.dev)
+  We’ve all seen the demos where an AI writes a "To-Do" app in thirty seconds. It’s impressive, sure, in the same way a dog riding a bicycle is impressive, but it’s not exactly how we build production-grade software. In the real world, the SDLC is messy, our pipelines are held together by legacy YAML, and "moving fast" usually means "breaking things we didn't know existed."
+
+  Shifting from simple AI assistants to autonomous agents that can provision infrastructure and remediate incidents, requires us to stop asking "what can it build?" and start asking "how do we manage it without losing our minds?"
+
+  This talk will look past the hype to the practical integration of AI-augmented DevOps. We’ll explore the transition from manual automation to agentic pipelines, the critical importance of "Human-in-the-loop" guardrails, and why the most important part of AI-driven DevOps and DevEx isn't the code it generates, but the cognitive load it *actually* removes. At the end, we'll have a roadmap on how to actually use this stuff without making everyone very angry.
 # apply UnoCSS classes to the current slide
 class: text-center
 # https://sli.dev/features/drawing
