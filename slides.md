@@ -26,6 +26,7 @@ presenterRole: Tech Solution Architect
 layout: cover
 duration: 41min
 transition: slide-left
+colorSchema: dark
 ---
 
 <!--
@@ -40,7 +41,9 @@ still holds up.
 
 ---
 # S2 — "DON'T PANIC" bookend (opens the talk)
-layout: section
+layout: image
+image: /images/dont-panic.png
+backgroundSize: fill
 title: "DON'T PANIC"
 ---
 
@@ -57,7 +60,7 @@ shirt.
 # S3 — dog on a bicycle (needs a real photo — see public/images/dog-on-a-bicycle.svg)
 layout: image-full
 image: /images/dog-on-a-bicycle.svg
-imageAlt: TODO — replace with the real dog-on-a-bicycle photo.
+imageAlt: A dog riding a bicycle.
 ---
 
 <!--
@@ -133,8 +136,10 @@ Don't panic. Let's get into it.
 
 ---
 # S6 — Section 1 opener ("Section 1: The Map of Where We Actually Are")
+# number: dropped — with the 4 mid-talk dividers (S11/S23/S30/S38) hidden,
+# a lone "01" numeral would read as a broken 1-of-6 sequence. Titled break
+# instead; section.vue already guards this with v-if="$frontmatter?.number".
 layout: section
-number: "01"
 title: Mostly Harmless
 ---
 
@@ -249,10 +254,14 @@ at what it actually looks like.
 -->
 
 ---
-# S11 — Section 2 opener ("Section 2: Where the Bottleneck Moved")
+# S11 — Section 2 opener ("Section 2: Where the Bottleneck Moved").
+# Hidden (v8 merge, 2026-07-31) — mid-talk section dividers cut for pacing.
+# Its speaker-note opener (the Vogons/hyperspace-bypass beat) moved to the
+# top of S12's notes below so the Hitchhiker callback survives the hide.
 layout: section
 number: "02"
 title: The Hyperspace Bypass
+hide: true
 ---
 
 <!--
@@ -309,10 +318,24 @@ layout: default
   text-transform: uppercase;
   font-size: var(--wwt-text-caption);
   letter-spacing: 0.04em;
+  /* Dark-mode override lives in global-top.vue's unscoped style block:
+     :global(.dark) here compiles to nothing in this project's Slidev/Vue
+     toolchain — confirmed via computed style, not just visually — the same
+     failure found in JCurve.vue/McpSchematic.vue/BarChart.vue. See that file
+     for the fix and the full explanation. --wwt-primary-lightest flips to a
+     near-transparent dark tint in dark mode (tokens.css) but
+     --wwt-secondary-base does not, dropping this pairing to ~1.05:1. */
 }
 </style>
 
 <!--
+Early in the Hitchhiker's Guide, Earth gets demolished to make way for a
+hyperspace bypass, and when people object, the Vogons point out that the
+plans have been on display in a planning office on Alpha Centauri for the
+last fifty years, so really, this one's on humanity for not checking. Your
+pipeline is in a similar position right now. AI's bypass got built.
+Everything downstream is finding out what that costs.
+
 There isn't a consensus yet on what AI adoption is actually returning. Three
 sources, three different conclusions. Google Cloud's 2025 report on AI ROI
 says 78% of executives have seen a return on at least one use case — the
@@ -328,29 +351,50 @@ whether AI works. It's for whom, and under what conditions.
 
 ---
 # S13 — the DORA credibility caveat (must read candid, not combative)
+# v8 correction: previously implied a second study had already found a
+# problem with the AI-adoption/performance correlation. Stride's study is
+# pre-registered, not published — corrected below. Body also de-scripted:
+# was verbatim first-person speaker prose; terse fragments per the outline.
 layout: default
 ---
 
 # Worth naming honestly
 
+DORA's 2026 ROI report has taken real criticism this year — some call it
+more brochure than research.
+
+<p class="wwt-caveat__note">
+Separately: Stride Research has <strong>pre-registered</strong> a study
+testing whether AI adoption still correlates with performance once you
+control for company size. Results expected later this year — not published
+yet.
+</p>
+
+<style>
+.wwt-caveat__note {
+  font-size: var(--wwt-text-caption);
+  color: var(--wwt-ink-muted);
+}
+</style>
+
+<!--
 Before I lean further on DORA's numbers, I want to flag something, because
 I'd rather you hear it from me now than lose trust in the rest of this talk
 later.
 
-DORA's 2026 ROI report has taken real criticism this year — some call it
-more brochure than research. A separate analysis questions whether AI
-adoption correlates with performance once you control for company size.
-
-<!--
 One detailed teardown called it more brochure than research, pointing out
 that the J-curve model is heavy on narrative and light on new primary data,
 and noting that DORA's research partner has openly said they wanted to
 reframe what they'd previously called an anomaly in their own 2024 numbers.
-Separately, another research group has questioned whether the correlation
-between AI adoption and elite performance holds up once you control for
-company size and existing engineering maturity — in other words, whether good
-teams are just good at everything, AI included, rather than AI being what
-makes them good.
+
+Separately, a research group called Stride has pre-registered a study
+specifically testing whether the correlation between AI adoption and elite
+performance survives controls for company size and existing engineering
+maturity — in other words, whether good teams are just good at everything,
+AI included, rather than AI being what makes them good. Worth being precise
+about where that actually stands: the methodology is public, the hypothesis
+is locked in, and the results are expected later this year. I don't have the
+answer yet. Neither does anyone else currently claiming to.
 
 I think that's a fair challenge, and I'm not going to pretend it isn't out
 there.
@@ -358,6 +402,9 @@ there.
 
 ---
 # S14 — pivot line (supporting principle, smaller than S35/S50)
+# v8: raised from 28px (was rendering smaller than a routine quote's
+# default 36px — a hierarchy inversion) to 40px: above default, still below
+# S35's 56px and S50's 44px.
 layout: quote
 ---
 
@@ -366,7 +413,7 @@ AI-hype industrial complex.
 
 <style>
 :deep(.wwt-quote__text) {
-  font-size: 28px !important;
+  font-size: 40px !important;
 }
 </style>
 
@@ -376,13 +423,49 @@ the people selling you AI optimism as you are of the people selling you AI
 hype. Both have a product.
 
 Here's why that skepticism doesn't actually sink the argument, though. None
-of what matters here rests on DORA alone. Watch what happens when we check
-the same story against people who weren't running a survey.
+of what matters here rests on DORA alone. Atlassian ran its own workforce
+research this year, independently. Watch what happens when we check the
+same story against people who weren't running a survey in the first place.
+-->
+
+---
+# S14b — Atlassian corroboration (v8: NEW). Same candid register as S13,
+# not a chart — a third source alongside CircleCI and Sonar.
+layout: default
+---
+
+# It isn't just DORA
+
+Atlassian, independently this year: the **AI efficiency paradox** —
+individual output speeds up, then backs up at review and approval.
+
+<p class="wwt-caveat__note">Different company, different survey. No connection to DORA.</p>
+
+<style>
+.wwt-caveat__note {
+  font-size: var(--wwt-text-caption);
+  color: var(--wwt-ink-muted);
+}
+</style>
+
+<!--
+None of what matters here rests on DORA alone. Atlassian ran its own
+workforce research this year, independently, and landed on something they're
+calling an AI efficiency paradox: individual output speeds up, then piles up
+at review and approval, and most of the gain disappears before it ever
+reaches the system level. Different company, different survey, no
+connection to DORA at all, and it's the same mechanism this talk keeps
+coming back to. Watch what happens when we check the story again against
+people who weren't running a survey in the first place.
 -->
 
 ---
 # S15 — CircleCI scale stat
+# title added: stats.vue only renders an <h1> when title is set — this
+# slide had none, so it carried no heading landmark at all for screen-
+# reader "jump by heading" navigation (WCAG 1.3.1/2.4.6).
 layout: stats
+title: Not a survey
 stats:
   - value: "28,000,000"
     label: CI workflows analyzed
@@ -459,7 +542,9 @@ The bottleneck moved. [pause]
 
 ---
 # S18 — MTTR stat
+# title added: see S15's note on stats.vue's heading gap.
 layout: stats
+title: Slower at fixing what breaks
 stats:
   - value: "72 min"
     label: median time to recover
@@ -474,23 +559,64 @@ more of it.
 -->
 
 ---
-# S19 — main-branch success rate stat
+# S19 — main-branch success rate, now a two-step trend (v8: updated data)
+# stats.vue wraps items in <v-clicks>, so the two values build automatically
+# — no custom CSS needed for the reveal.
 layout: stats
+title: Main-branch success rate
 stats:
   - value: "70.8%"
-    label: main-branch success rate
-    caption: "benchmark: 90% · lowest in 5+ years — CircleCI 2026"
+    label: September 2025
+    caption: "Lowest in 5+ years · benchmark is 90%"
+  - value: "76.7%"
+    label: March 2026
+    caption: "Improving — still short of the 2023–24 mid-80s and the 90% benchmark"
 ---
 
 <!--
-Main-branch success rate has dropped to 70.8%, the lowest it's been in five
-years, against an industry benchmark of 90%. Roughly three in ten attempts to
-merge into production code are now failing outright.
+And main-branch success rate had dropped to 70.8% as of last September, the
+lowest it had been in five years, against an industry benchmark of 90%.
+Roughly three in ten attempts to merge into production code were failing
+outright.
+
+[click] A follow-up check-in CircleCI published just a few weeks ago, using
+fresher data from this past March, shows that number climbing back to 76.7%.
+Genuinely encouraging. Still nowhere near the mid-80s teams were hitting back
+in 2023 and 2024, and still well short of that 90% benchmark.
 -->
 
 ---
-# S20 — the 12-FTE math, built line by line
+# S19b — Merge Efficiency Ratio (v8: NEW)
+layout: stats
+title: "Merge Efficiency Ratio — validation cycles per merged change"
+stats:
+  - value: "3.9"
+    label: Median team
+  - value: "2.6"
+    label: Top 5%
+  - value: "1.3"
+    label: Elite cohort
+    caption: "20 organizations · CircleCI, July 2026"
+---
+
+<!--
+That same follow-up report introduced a metric worth stealing for your own
+dashboards: merge efficiency ratio, or MER, which counts how many validation
+cycles it actually takes to get one change onto the main branch. It's a
+direct read on how much rework is hiding behind whatever your throughput
+number says. The median team runs at an MER of about 3.9. The top 5% run at
+2.6. A small cohort of twenty elite organizations in the same dataset run at
+1.3, and improved on that by 21% in a single year. If you take away one new
+number to start tracking after this talk, that's a strong candidate.
+-->
+
+---
+# S20 — the 12-FTE math, built line by line. ALTERNATE, hidden: S20b
+# (dollar-cost framing) is live instead. Swap `hide: true` between S20 and
+# S20b to re-frame for the room — FTEs for an engineering audience, dollars
+# for a budget-holding one. Not both-and (per v8 outline).
 layout: default
+hide: true
 ---
 
 # The 12-FTE math
@@ -543,6 +669,43 @@ teams actually live, and the same drop in success rate is equivalent to
 
 [click] Not hiring twelve fewer. Losing twelve you already had, to friction
 that never shows up on a headcount spreadsheet.
+-->
+
+---
+# S20b — dollar-cost framing (v8: NEW). Live alternate to S20 — not both-and.
+layout: stats
+title: "50-developer team, ~3,000 changes a month"
+stats:
+  - value: "$900K"
+    label: a year at risk
+    caption: "Unoptimized workflows — agents idling until their context cache expires"
+  - value: "$700K+"
+    label: recoverable
+    caption: "By moving routine validation earlier — CircleCI, July 2026"
+---
+
+<style>
+/* Red-to-blue shift, not red-to-green — the palette has no green
+   (tokens.css) and Stat.vue has no tone prop, so its value is always
+   --wwt-primary-base by default. :deep() required: a bare .wwt-stat__value
+   selector compiles to a stamped attribute that never matches. */
+:deep(.wwt-stat:first-child .wwt-stat__value) {
+  color: var(--wwt-accent6-base);
+}
+</style>
+
+<!--
+If FTEs feel a little abstract, here's the same story in dollars instead.
+That same recent CircleCI report modeled a fifty-developer team shipping
+about three thousand changes a month at a fairly ordinary MER. Run that team
+through unoptimized, agent-heavy workflows with slow CI feedback and the
+friction costs something like nine hundred thousand dollars a year, a lot of
+it from agents sitting idle waiting for a green light long enough that their
+context cache expires and they have to start over from scratch. Move the
+routine checks earlier, into the loop where the code actually gets written
+instead of after it's already been pushed, and that same team can claw back
+seven hundred thousand dollars or more of it. FTEs or dollars, take whichever
+framing lands better with whoever controls your budget.
 -->
 
 ---
@@ -641,10 +804,14 @@ the planet, this year.
 -->
 
 ---
-# S23 — Section 3 opener ("Section 3: Paying the Verification Tax")
+# S23 — Section 3 opener ("Section 3: Paying the Verification Tax").
+# Hidden (v8 merge, 2026-07-31) — mid-talk section dividers cut for pacing.
+# Its speaker-note opener (the Babel fish beat) moved to the top of S24's
+# notes below so the Hitchhiker callback survives the hide.
 layout: section
 number: "03"
 title: The Babel Fish Problem
+hide: true
 ---
 
 <!--
@@ -670,6 +837,14 @@ stats:
 ---
 
 <!--
+Quick detour into the Babel fish. In the Hitchhiker's Guide, it's a small
+yellow creature you stick in your ear that translates any language into your
+own, instantly. Genuinely useful. Also, memorably, used in the book as a
+proof against the existence of God — the argument being that something this
+convenient couldn't have arisen naturally, so its existence disproves the
+faith required to believe in a creator. It's absurd and also kind of
+airtight, which is the bar I'm setting for what follows.
+
 Why does verification cost so much? Sonar asked 1,149 developers and found
 that 96% don't fully trust that AI-generated code is functionally correct.
 And yet only 48% of them always check it before committing. Ninety-six
@@ -779,8 +954,12 @@ proposes. A human disposes.
 -->
 
 ---
-# S28 — DORA 2025 AI effects (TODO: no source prose exists — see plan gap #1; consider cutting)
+# S28 — DORA 2025 AI effects. Bridge beat now written into notes below.
+# Hidden for the 40-min delivery (v8 merge, 2026-07-31) — deck already carries
+# this argument via Sonar (S24/25) and the METR RCT (S26/27). Un-hide by
+# deleting the hide: line if building a longer version of the talk.
 layout: default
+hide: true
 ---
 
 # What AI actually changed
@@ -799,15 +978,22 @@ layout: default
     { label: 'Job satisfaction / burnout', bars: [{ value: 1, tone: 'flat', display: 'flat' }] },
     { label: 'Friction in the dev process', bars: [{ value: 1, tone: 'flat', display: 'flat' }] },
   ]"
-  source="DORA 2025, n=5,000 — directional, not exact effect sizes. TODO: verify against the source report before presenting."
+  source="DORA 2025, n=5,000 — directional, not exact effect sizes."
 />
 
 <!--
-TODO: the v7 speaker notes don't narrate this slide directly — it sits
-between the METR epilogue and "AI proposes, humans dispose" with no dedicated
-beat written. It's also the outline's own flagged "backup-deck-needed" slide.
-Options: write a short bridge here ("DORA's own effects data tells a similar
-story — mostly positive, three flagged"), or cut it and go straight to S29.
+DORA's own effects data tells a similar story to what we've just walked
+through: mostly positive, three flagged. Individual productivity, team and
+product performance, code and documentation quality, review speed — all up.
+But delivery instability is up too, and job satisfaction and process
+friction are flat, not improved. Same shape as everything else in this
+section: the gains are real, and they don't come free.
+
+NOTE (2026-07-31): hidden for this delivery — see hide: true below. Un-hide
+by deleting that line, but re-verify these effect sizes against
+import/research/DORA_State_of_AI-Assisted_Software_Development_2025.pdf
+first (TODO carried over from before: never independently confirmed against
+the source report).
 -->
 
 ---
@@ -818,6 +1004,14 @@ role: Every AI output is a junior dev's first PR.
 
 AI proposes. Humans dispose.
 
+<style>
+/* No attribution: set — quote.vue renders that span regardless (no v-if),
+   so its empty content leaves a phantom line-height gap above role. Collapse it. */
+:deep(.wwt-quote__attribution:empty) {
+  display: none;
+}
+</style>
+
 <!--
 Every piece of AI output is a first draft from a junior engineer — not
 because the model is unintelligent, sometimes it's quite good, but because
@@ -826,10 +1020,14 @@ room for the post-incident review.
 -->
 
 ---
-# S30 — Section 4 opener ("Section 4: Where You Actually Are")
+# S30 — Section 4 opener ("Section 4: Where You Actually Are").
+# Hidden (v8 merge, 2026-07-31) — mid-talk section dividers cut for pacing.
+# Its speaker-note opener (the towel beat) moved to the top of S31's notes
+# below so the Hitchhiker callback survives the hide.
 layout: section
 number: "04"
 title: Where Your Towel Won't Save You
+hide: true
 ---
 
 <!--
@@ -853,6 +1051,15 @@ layout: default
 <ArchetypeGrid source="DORA 2025, n=5,000" />
 
 <!--
+The towel gets described in the Hitchhiker's Guide as the single most useful
+thing a hitchhiker can carry. That's true right up until it isn't, and a
+fair number of you are currently standing in a situation the towel can't
+help with. You may not have noticed yet. Let's find out.
+
+DORA took their 5,000 survey respondents and statistically sorted them into
+seven team archetypes. I'll go through all seven quickly. You're in here
+somewhere.
+
 Cluster one, foundational challenges, 10%: stuck in survival mode, burnout
 high, most metrics low. If your standup routinely opens with "okay, what's
 actually on fire today," this is probably you. Deploying agents here just
@@ -887,7 +1094,9 @@ can't tell which group you're in, that itself is a signal.
 
 ---
 # S32 — 38% / 40% split stat
+# title added: see S15's note on stats.vue's heading gap.
 layout: stats
+title: Add it up
 stats:
   - value: "38%"
     label: in clear difficulty
@@ -973,19 +1182,32 @@ anyone else building software.
 -->
 
 ---
-# S36 — MUST-NAIL: Amazon Kiro timeline (sober, factual, not gloating)
+# S36 — MUST-NAIL: Amazon Kiro timeline (v8: 4 events, specific figures).
+# Tone: sober and factual — the point is "this happens to the best," not a
+# dunk. timeline.vue has no body slot, so the Amazon-dispute note attaches to
+# the Mar 5 event's own detail rather than floating as a separate footnote.
+# grid-auto-flow: column means 4 events = 4 equal columns. At 4 columns the
+# title's "(public reporting, 2025-2026)" qualifier plus long labels/details
+# genuinely overflowed past the footer at 1920x1080 (confirmed visually,
+# 2026-07-31) — trimmed the title to one line and shortened the Dec-2025 and
+# Amazon's-fix label/detail pairs to recover the vertical budget. The
+# "public reporting" framing moved to the speaker notes below; the real
+# dates on each event already carry the timeframe on screen.
 layout: timeline
-title: "If it can happen there... (public reporting, 2025–2026)"
+title: "If it can happen there..."
 events:
   - date: Dec 2025
-    label: An AI agent inherits elevated permissions
-    detail: Bypasses two-person approval, deletes/recreates a production environment. 13-hour outage.
-  - date: Mar 2026
-    label: A rough week
-    detail: Multiple high-severity retail outages. Internal docs cite a "trend of incidents" tied to Gen-AI-assisted changes.
+    label: Elevated permissions
+    detail: Bypasses two-person approval, deletes and rebuilds the environment. 13-hour outage.
+  - date: "Mar 2, 2026"
+    label: AI-assisted changes
+    detail: 120,000 lost orders. 1.6 million website errors.
+  - date: "Mar 5, 2026"
+    label: Worse
+    detail: "~6.3M lost orders, a 99% drop in North American order volume, ~6 hours down. Amazon disputes AI as the primary cause."
   - date: "Amazon's fix"
-    label: Mandatory senior-engineer review, reinstated
-    detail: A human, back in the loop.
+    label: Mandatory review, reinstated
+    detail: Senior-engineer sign-off on AI changes. A human, back in the loop.
 ---
 
 <!--
@@ -997,15 +1219,24 @@ engineer's elevated permissions, so the standard two-person approval that
 would normally gate a change of that size simply didn't apply. The result: a
 thirteen-hour outage.
 
-Three months later, in March 2026, Amazon had a genuinely bad week: several
-high-severity outages on the retail site, hours of disrupted checkout and
-account access. Internal documentation reportedly described this as a trend
-of incidents connected to Gen-AI-assisted changes.
+Three months later, in March 2026, Amazon had a genuinely bad week, and this
+time there are real numbers attached to it. On March 2nd, an incident tied to
+AI-assisted changes caused 120,000 lost orders and 1.6 million website
+errors. Three days later, on March 5th, a second and considerably worse
+incident took the U.S. site down for roughly six hours, dropping North
+American order volume by 99% and costing something like 6.3 million lost
+orders. Amazon disputes that AI was the primary cause of at least one of
+these and has called it user error, which I think is worth including rather
+than leaving out, because it's a fair point to raise even though it doesn't
+change what happened. Internal documentation reportedly described the
+broader pattern going back to the previous fall as a trend of incidents
+connected to Gen-AI-assisted changes.
 
 Here's the part worth actually remembering, though. Amazon's response was to
 reinstate mandatory senior-engineer review specifically for AI-assisted
 changes. They put a human back in the loop, because an agent had been handed
-disposal authority instead of proposal authority.
+disposal authority instead of proposal authority, and nothing downstream was
+strong enough to catch it before it mattered.
 
 This is Amazon. If it can happen to a company with that much operational
 sophistication, "we're careful, it won't happen to us" isn't a strategy.
@@ -1038,10 +1269,14 @@ verification to catch it when it's wrong.
 -->
 
 ---
-# S38 — Section 5 opener ("Section 5: How to Flatten the Curve")
+# S38 — Section 5 opener ("Section 5: How to Flatten the Curve").
+# Hidden (v8 merge, 2026-07-31) — mid-talk section dividers cut for pacing.
+# Its speaker-note opener moved to the top of S39's notes below so the beat
+# survives the hide.
 layout: section
 number: "05"
 title: Vibe Then Verify
+hide: true
 ---
 
 <!--
@@ -1059,7 +1294,19 @@ role: Generate fast. Validate harder.
 
 Vibe, then verify.
 
+<style>
+/* Same empty-attribution gap as S29 — see that slide's note. */
+:deep(.wwt-quote__attribution:empty) {
+  display: none;
+}
+</style>
+
 <!--
+We've now looked at the dip from four angles: pipeline data, developer
+experience, a controlled experiment, and a thirteen-hour outage at one of the
+largest companies on earth. Let's talk about how the teams doing this well
+are actually flattening it.
+
 There's a phrase from Sonar's research that fits the whole answer into three
 words: vibe, then verify. Generate quickly, then check harder than you're
 currently checking.
@@ -1116,7 +1363,9 @@ it into seconds.
 
 ---
 # S42 — verification layer stat
+# title added: see S15's note on stats.vue's heading gap.
 layout: stats
+title: The cost of skipping it
 stats:
   - value: "+80%"
     label: more outages, without a verification layer
@@ -1161,12 +1410,13 @@ on purpose instead of learned the hard way in a postmortem.
 # NOT `layout: process`: that layout's steps grid uses fixed equal-width
 # columns with no wrapping, and empirically overflows past the slide edge
 # at 6+ items (confirmed by rendering it — only 5 of 6 columns are visible,
-# regardless of how short the content is). A custom 2x3 grid on `default`
-# fits all six without cutting any real content.
+# regardless of how short the content is). A custom 4x2 grid on `default`
+# fits all seven without cutting any real content (7 items in an 8-cell
+# grid; last cell intentionally empty).
 layout: default
 ---
 
-# The AI Capabilities Model — DORA 2026
+# The AI Capabilities Model — DORA 2025
 
 <div class="wwt-capabilities">
 <div class="wwt-capabilities__item">
@@ -1176,26 +1426,31 @@ layout: default
 </div>
 <div class="wwt-capabilities__item">
 <span class="wwt-capabilities__num">02</span>
-<h3>Healthy data</h3>
-<p>AI-accessible, well-governed data.</p>
+<h3>Healthy data ecosystems</h3>
+<p>Data that's well-governed at the source.</p>
 </div>
 <div class="wwt-capabilities__item">
 <span class="wwt-capabilities__num">03</span>
+<h3>AI-accessible data</h3>
+<p>Internal data AI tooling can actually reach.</p>
+</div>
+<div class="wwt-capabilities__item">
+<span class="wwt-capabilities__num">04</span>
 <h3>Version control discipline</h3>
 <p>Strong practices, not aspirational ones.</p>
 </div>
 <div class="wwt-capabilities__item">
-<span class="wwt-capabilities__num">04</span>
+<span class="wwt-capabilities__num">05</span>
 <h3>Small batches</h3>
 <p>Working in small, reviewable increments.</p>
 </div>
 <div class="wwt-capabilities__item">
-<span class="wwt-capabilities__num">05</span>
+<span class="wwt-capabilities__num">06</span>
 <h3>User-centric focus</h3>
 <p>Genuinely centered on the user, not the roadmap.</p>
 </div>
 <div class="wwt-capabilities__item">
-<span class="wwt-capabilities__num">06</span>
+<span class="wwt-capabilities__num">07</span>
 <h3>Quality internal platforms</h3>
 <p>Platforms worth building on.</p>
 </div>
@@ -1207,7 +1462,7 @@ layout: default
   min-height: 0;
   overflow: hidden;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 0.75rem 1.5rem;
 }
@@ -1239,11 +1494,10 @@ layout: default
 </style>
 
 <!--
-NOTE: the v7 speaker notes say "seven practices" but only name six — this
-slide lists exactly the six named in the prose rather than padding a
-duplicate placeholder for an unnamed seventh. Worth a source check before
-presenting if the real DORA AI Capabilities Model has a specific seventh
-item to add here.
+RESOLVED (2026-07-31): confirmed against the DORA 2025 source PDF (report
+pp. 49-50, Figure 45 on p. 62) — the model is seven capabilities, and "healthy,
+AI-accessible data" was two source capabilities collapsed into one. Split them
+back apart above (items 02/03). All seven now named; nothing padded.
 -->
 
 <!--
@@ -1288,8 +1542,9 @@ Vibe, then verify. Generate fast. Check harder.
 
 ---
 # S47 — Closing opener
+# number: dropped — matches S6; a titled break, not a numbered 6th section
+# now that S11/S23/S30/S38 are hidden. See S6's note for the full rationale.
 layout: section
-number: "06"
 title: The Roadmap
 ---
 

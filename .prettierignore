@@ -1,0 +1,7 @@
+# Prettier is not wired into this repo's scripts (see package.json), so
+# `pnpm format` is not currently a risk. This file is cheap insurance
+# against a VS Code format-on-save extension instead: Prettier reformats
+# YAML frontmatter by collapsing indentation (e.g. `left:\ntitle:` instead
+# of `left:\n  title:`), which silently breaks Slidev's nested keys
+# (stats:, events:, left:/right:, steps:) with no error at build time.
+slides.md

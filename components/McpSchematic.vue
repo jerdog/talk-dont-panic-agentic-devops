@@ -63,6 +63,12 @@ withDefaults(
   color: var(--wwt-secondary-base);
   font-weight: 600;
   font-size: var(--wwt-text-body);
+  /* Dark-mode override lives in global-top.vue's unscoped style block:
+     :global(.dark) inside a component's scoped style silently fails to
+     compile in this project's Vite/Vue toolchain (confirmed — the rule
+     never reaches the served stylesheet, no build error). --wwt-secondary-base
+     doesn't flip for dark mode, measured 1.30:1 against the 4.5:1 minimum
+     for normal text. */
 }
 
 .wwt-mcp__lines {
@@ -109,5 +115,9 @@ withDefaults(
   color: var(--wwt-secondary-base);
   font-size: var(--wwt-text-caption);
   font-weight: 600;
+  /* Dark-mode override lives in global-top.vue — see the note on
+     .wwt-mcp__chip above for why it can't live here. Measured against the
+     dark-mode composite of --wwt-primary-lightest specifically: 1.03:1 vs
+     the 4.5:1 minimum. */
 }
 </style>

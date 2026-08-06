@@ -50,7 +50,11 @@ function topPct(y: number) {
 <template>
   <div class="wwt-jcurve">
     <div class="wwt-jcurve__frame" :style="{ aspectRatio }">
-      <svg class="wwt-jcurve__svg" :viewBox="viewBox" preserveAspectRatio="none">
+      <svg class="wwt-jcurve__svg" :viewBox="viewBox" preserveAspectRatio="none" aria-hidden="true">
+        <!-- Purely decorative: the slide's own H1 ("It isn't a straight line" /
+             "The dip has a name") plus, when labeled, the real HTML phase-label
+             and callout text below already carry the meaning for a screen
+             reader — this shape has no independent text alternative. -->
         <!-- reference line at the starting level, so the dip below it reads clearly -->
         <line
           :x1="start.x"
@@ -167,6 +171,12 @@ function topPct(y: number) {
 .wwt-jcurve__point--trough {
   fill: var(--wwt-secondary-base);
   stroke: var(--wwt-secondary-base);
+  /* Dark-mode override lives in global-top.vue's unscoped style block, not
+     here: :global(.dark) inside a component's scoped style silently fails
+     to compile in this project's Vite/Vue toolchain (confirmed — the rule
+     never appears in the served stylesheet, no error). See that file for
+     why: --wwt-secondary-base doesn't flip for dark mode, so this measured
+     1.30:1 against WCAG's 3:1 minimum for graphical objects (1.4.11). */
 }
 
 .wwt-jcurve__tick {
@@ -193,5 +203,7 @@ function topPct(y: number) {
   font-size: var(--wwt-text-body);
   font-weight: 600;
   color: var(--wwt-secondary-base);
+  /* Dark-mode override lives in global-top.vue — see the note on
+     .wwt-jcurve__point--trough above for why it can't live here. */
 }
 </style>

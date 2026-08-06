@@ -125,7 +125,10 @@ withDefaults(
 }
 
 .wwt-archetypes__cell--warning {
-  background: rgba(251, 85, 14, 0.08);
+  /* 0.08 measured at 2.98:1 against the accent5 pct text — a hair under
+     WCAG's 3:1 large-text minimum. 0.05 clears it in both color schemes
+     (verified: 3.09:1 light / 5.75:1 dark) without visibly changing the tint. */
+  background: rgba(251, 85, 14, 0.05);
   border-top-color: var(--wwt-accent5-base);
 }
 .wwt-archetypes__cell--warning .wwt-archetypes__pct {
@@ -140,7 +143,12 @@ withDefaults(
   border-top-color: var(--wwt-primary-light);
 }
 .wwt-archetypes__cell--mid .wwt-archetypes__pct {
-  color: var(--wwt-secondary-base);
+  /* --wwt-secondary-base doesn't flip for dark mode (unlike this cell's own
+     wash, via --wwt-primary-lightest) — measured 1.09:1 in dark mode,
+     effectively invisible. --wwt-secondary-light passes both color schemes
+     on this wash (4.40:1 light / 3.41:1 dark, vs the 3:1 large-text minimum)
+     without a separate dark-mode override. */
+  color: var(--wwt-secondary-light);
 }
 
 .wwt-archetypes__cell--positive {
@@ -148,7 +156,11 @@ withDefaults(
   border-top-color: var(--wwt-primary-medium);
 }
 .wwt-archetypes__cell--positive .wwt-archetypes__pct {
-  color: var(--wwt-primary-medium);
+  /* --wwt-primary-medium measured 2.57:1 on this wash in light mode (even
+     2.89:1 with no wash at all) — never clears 3:1. --wwt-primary-base does
+     (3.33:1 light / 4.52:1 dark), matching --strong's pct color; the two
+     tiers stay visually distinct via their border/wash colors. */
+  color: var(--wwt-primary-base);
 }
 
 .wwt-archetypes__cell--strong {
