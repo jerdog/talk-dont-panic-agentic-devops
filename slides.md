@@ -97,7 +97,20 @@ That's the talk.
 
 ---
 # About the speakers slide
-layout: default
+layout: speaker
+speakers:
+  - name: Jeremy Meiss
+    role: Tech Solution Architect
+    company: WWT
+    photo: /images/jeremy-meiss.png
+    orgs:
+      - name: DevOpsDays KC
+      - name: CommunityDays KC
+      - name: CDF Ambassador 2025-26
+  - name: PJ Hagerty
+    role: Tech Solution Architect
+    company: WWT
+    photo: /images/pj-hagerty.png
 ---
 
 # Jeremy Meiss
@@ -1701,16 +1714,23 @@ The answer is: go clear the bottlenecks AI can't.
 -->
 
 ---
-# S53 — closing signoff (contact appended per plan)
-layout: end
-signoff: So long, and thanks for all the boilerplate. · jeremy.meiss@wwt.com
+layout: thank-you
+speakers:
+  - name: Jeremy Meiss
+    socials:
+      bluesky: jerdog.dev
+      linkedin: /in/jeremy-meiss
+      github: jerdog
+  - name: PJ Hagerty
+    socials:
+      linkedin: /in/pj-hagerty
+      github: pjhagerty
+slidesUrl: https://github.com/jerdog/talk-dont-panic-agentic-devops
 ---
 
+So long, and thanks for all the boilerplate.
+
 <style>
-/* end.vue has no slot to put contact info in separately from the signoff,
-   so the whole string (tagline + email) shares one field. Default signoff
-   sizing (56px) is tuned for a short tagline alone — at that size, the full
-   combined string runs long enough to collide with the X graphic behind it. */
 :deep(.wwt-end__signoff) {
   font-size: 32px;
 }
