@@ -1700,8 +1700,10 @@ was. You just get more time for it.
 
 ---
 # S52 — "DON'T PANIC" bookend (closes the talk)
-layout: section
-title: "DON'T PANIC"
+layout: image
+image: /images/dont-panic.png
+backgroundSize: fill
+hideBadge: true
 ---
 
 <!--
