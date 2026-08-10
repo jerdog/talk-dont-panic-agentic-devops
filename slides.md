@@ -393,24 +393,15 @@ layout: default
 </style>
 
 <!--
-Early in the Hitchhiker's Guide, Earth gets demolished to make way for a
-hyperspace bypass, and when people object, the Vogons point out that the
-plans have been on display in a planning office on Alpha Centauri for the
-last fifty years, so really, this one's on humanity for not checking. Your
-pipeline is in a similar position right now. AI's bypass got built.
-Everything downstream is finding out what that costs.
-
 There isn't a consensus yet on what AI adoption is actually returning. Three
 sources, three different conclusions. Google Cloud's 2025 report on AI ROI
-says 78% of executives have seen a return on at least one use case — the
-optimistic read. Stanford's AI Index says adoption is everywhere but real
-structural change is rare, and most companies land somewhere flat — the
-neutral read. And MIT's NANDA project describes what they call the shadow AI
-economy: official tools underdelivering while employees quietly route around
+says 78% of executives have seen a return on at least one use case — we'll acll that the optimistic read. Stanford's AI Index says adoption is everywhere but real
+structural change is rare, and most companies land somewhere flat — this is the
+neutral read. We also have MIT's NANDA project describes what they call the shadow AI economy: official tools underdelivering while employees quietly route around
 them using unauthorized consumer apps — the pessimistic read.
 
 All three are true at once, which tells you the interesting question isn't
-whether AI works. It's for whom, and under what conditions.
+whether AI works. It's for whom, and under what conditions. It also highlights the importance of who you are asking. On one end of the spectrum, you have executives who aren't actively using the tools saying they are amazing. On the other end, developers who are expected to use these tools daily are reporting they aren't as effective as advertised.
 -->
 
 ---
@@ -443,7 +434,7 @@ yet.
 
 <!--
 Before I lean further on DORA's numbers, I want to flag something, because
-I'd rather you hear it from me now than lose trust in the rest of this talk
+I'd rather you hear it now than lose trust in the rest of this talk
 later.
 
 One detailed teardown called it more brochure than research, pointing out
@@ -457,7 +448,7 @@ performance survives controls for company size and existing engineering
 maturity — in other words, whether good teams are just good at everything,
 AI included, rather than AI being what makes them good. Worth being precise
 about where that actually stands: the methodology is public, the hypothesis
-is locked in, and the results are expected later this year. I don't have the
+is locked in, and the results are expected later this year. We don't have the
 answer yet. Neither does anyone else currently claiming to.
 
 I think that's a fair challenge, and I'm not going to pretend it isn't out
@@ -486,11 +477,6 @@ AI-hype industrial complex.
 So take this as a rule for the rest of the talk: be exactly as skeptical of
 the people selling you AI optimism as you are of the people selling you AI
 hype. Both have a product.
-
-Here's why that skepticism doesn't actually sink the argument, though. None
-of what matters here rests on DORA alone. Atlassian ran its own workforce
-research this year, independently. Watch what happens when we check the
-same story against people who weren't running a survey in the first place.
 -->
 
 ---
@@ -1120,15 +1106,6 @@ layout: default
 <ArchetypeGrid source="DORA 2025, n=5,000" />
 
 <!--
-The towel gets described in the Hitchhiker's Guide as the single most useful
-thing a hitchhiker can carry. That's true right up until it isn't, and a
-fair number of you are currently standing in a situation the towel can't
-help with. You may not have noticed yet. Let's find out.
-
-DORA took their 5,000 survey respondents and statistically sorted them into
-seven team archetypes. I'll go through all seven quickly. You're in here
-somewhere.
-
 Cluster one, foundational challenges, 10%: stuck in survival mode, burnout
 high, most metrics low. If your standup routinely opens with "okay, what's
 actually on fire today," this is probably you. Deploying agents here just
@@ -1219,7 +1196,7 @@ right:
 ---
 
 <!--
-An experience gap. Junior developers report a 40% productivity gain from AI,
+The experience gap. Junior developers report a 40% productivity gain from AI,
 compared to 32% for seniors, but juniors also report the "looks correct but
 isn't reliable" failure mode at 66%, against 48% for seniors. The takeaway
 isn't that junior developers should use AI less. It's that senior review
@@ -1243,7 +1220,7 @@ AI cannot rescue an unhealthy platform.
 </style>
 
 <!--
-AI cannot rescue an unhealthy platform. [pause]
+AI cannot rescue an unhealthy platform. [pause] [say it again]
 
 I want to give you a real example of that sentence, because it happened this
 year, at a company with more infrastructure sophistication than almost
@@ -1363,7 +1340,7 @@ layout: quote
 role: Generate fast. Validate harder.
 ---
 
-Vibe, then verify.
+Build, then verify.
 
 <style>
 /* Same empty-attribution gap as S30 — see that slide's note. */
@@ -1373,11 +1350,6 @@ Vibe, then verify.
 </style>
 
 <!--
-We've now looked at the dip from four angles: pipeline data, developer
-experience, a controlled experiment, and a thirteen-hour outage at one of the
-largest companies on earth. Let's talk about how the teams doing this well
-are actually flattening it.
-
 There's a phrase from Sonar's research that fits the whole answer into three
 words: vibe, then verify. Generate quickly, then check harder than you're
 currently checking.
