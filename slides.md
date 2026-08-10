@@ -72,15 +72,6 @@ an idea guy but...." Those demos or ideas are sometimes impressive, in roughly
 the way a dog riding a bicycle is impressive — the fact that it happens at all
 is remarkable, and also, you would not want to build production infrastructure
 the way that dog builds momentum.
-
-So that's not what I'm doing today. No demo. No claim that agents replace
-your team next quarter. Instead I want to give you a map, because for about
-two years the industry has been asking the wrong question. We keep asking
-what AI can build. The question that actually matters, the one your platform
-team will ask you in six weeks whether you're ready or not, is how you ship
-this without making everyone furious.
-
-That's the talk.
 -->
 
 ---
@@ -103,6 +94,16 @@ furious?
 
 That's the talk.
 -->
+
+---
+# About the speakers slide
+layout: default
+---
+
+# Jeremy Meiss
+# PJ Hagerty
+
+(more info to come)
 
 ---
 # S5 — anchor: AI is an amplifier
