@@ -13,14 +13,26 @@
   Suppressed on `layout: cover` — S1 already carries its own big "Don't Panic"
   title treatment plus the WWT logo in that same top-right corner; the badge
   there reads as clutter rather than a callback.
+
+  To suppress it on any other slide, set `hideBadge: true` in that slide's
+  own frontmatter:
+
+    ---
+    layout: image-full
+    hideBadge: true
+    ---
 -->
 <script setup lang="ts">
 import { useNav } from "@slidev/client";
-const { currentLayout } = useNav();
+const { currentLayout, currentFrontmatter } = useNav();
 </script>
 
 <template>
-  <div v-if="currentLayout !== 'cover'" class="dp-badge-layer" aria-hidden="true">
+  <div
+    v-if="currentLayout !== 'cover' && !currentFrontmatter?.hideBadge"
+    class="dp-badge-layer"
+    aria-hidden="true"
+  >
     <img class="dp-badge" src="/images/dont-panic.png" alt="" />
   </div>
 </template>
@@ -128,5 +140,27 @@ const { currentLayout } = useNav();
    --wwt-primary-light clears it (7.02:1 on this card's dark-mode wash). */
 .dark .wwt-threeviews__tag {
   color: var(--wwt-primary-light) !important;
+}
+
+/* Deck-wide quote-layout typography, requested 2026-08-07: bigger default
+   quote text, smaller italic attribution. Applies in both light and dark
+   quote slides (quote.vue's dark:true variant only swaps background/ink
+   color, not size), so this isn't a `.dark`-gated rule like the fixes above.
+
+   quote.vue's own base rules aren't !important, so this only needs
+   !important to jump into that higher-priority bucket — once there, it
+   reliably beats quote.vue's plain scoped rule regardless of load order,
+   the same way the `.dark` fixes above do. It also reliably LOSES to the
+   three slides that hand-tune .wwt-quote__text per slide (S15/S36/S51,
+   via :deep(...) !important in slides.md): their compiled selector carries
+   an extra [data-v-hash] attribute, which out-specifies this plain class
+   selector even within the !important bucket — so their sizes keep
+   overriding this default, by construction, no load-order gamble needed. */
+.wwt-quote__text {
+  font-size: 44px !important;
+}
+.wwt-quote__attribution {
+  font-size: 20px !important;
+  font-style: italic !important;
 }
 </style>

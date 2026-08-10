@@ -1,0 +1,13 @@
+/* Opt-in modifier for Slidev's built-in `two-cols-header` layout: centers the
+   full-width header row across the slide instead of flush left.
+   Apply per slide via `layoutClass: wwt-header-center` — NOT `class:`, which
+   that layout forwards to its columns only, never to the header or the root.
+
+   The `*` half of the selector is load-bearing. The theme's
+   `.slidev-layout *  { text-align: left }` matches the heading element
+   directly, and a direct declaration beats an inherited one — so setting
+   text-align on `.col-header` alone leaves the heading left-aligned. */
+.wwt-header-center .col-header,
+.wwt-header-center .col-header * {
+  text-align: center;
+}

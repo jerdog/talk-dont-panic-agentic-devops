@@ -21,22 +21,21 @@ info: |
   At the end, we'll have a roadmap: what to measure, what to budget for, and
   why the most important part of AI-driven DevOps isn't the code it generates,
   but the bottlenecks it actually clears.
-presenter: Jeremy Meiss
+presenterName: Jeremy Meiss
 presenterRole: Tech Solution Architect
 layout: cover
-duration: 41min
+duration: 45min
 transition: slide-left
 colorSchema: dark
 ---
 
 <!--
-Good [morning/afternoon]. So the title of this talk is "Don't Panic." For
-those of you who recognize where that's from, hello, you're my people. For
-everyone else: it's what's printed on the cover of the Hitchhiker's Guide to
-the Galaxy, in what Douglas Adams calls "large friendly letters," described as
-the most important piece of advice ever offered to a being trying to navigate
-a chaotic universe. I've borrowed it for agentic DevOps, where I think it
-still holds up.
+A show of hands: who recognizes where the title of this talk is from? For those
+who don't, it's what's printed on the cover of the Hitchhiker's Guide to
+the Galaxy from the Douglas Adams book of the same name. He describes the book
+as the most important piece of advice ever offered to a being trying to navigate
+a chaotic universe. If that doesn't describe the current state of Software
+Development, much less our world today, I don't know what else does.
 -->
 
 ---
@@ -44,33 +43,35 @@ still holds up.
 layout: image
 image: /images/dont-panic.png
 backgroundSize: fill
+hideBadge: true
 title: "DON'T PANIC"
 ---
 
 <!--
 But before I tell you not to panic, I want to acknowledge that you probably
-already are. Maybe quietly. It shows up in standups disguised as "how do we
-feel about Q3 velocity?" It shows up in Slack when someone asks "is anyone
-else's Copilot doing this?" It shows up in the CTO's office as "what's our AI
-strategy," which is usually just "are we falling behind" wearing a nicer
-shirt.
+already are. Maybe quietly. And you're not alone, because it shows up in
+standups disguised as "how do we feel about Q3 velocity?", or in Slack when
+someone asks "is anyone else's Copilot doing this?" It shows up in the CTO's
+office as "what's our AI strategy," which is usually just "are we falling
+behind" wearing a nicer shirt.
 -->
 
 ---
 # S3 — dog on a bicycle (needs a real photo — see public/images/dog-on-a-bicycle.svg)
-layout: image-full
-image: /images/dog-on-a-bicycle.svg
+layout: image
+image: /images/golden-retriever-on-bicycle.png
+backgroundSize: fit
 imageAlt: A dog riding a bicycle.
 ---
 
 <!--
 Most of us are somewhere on that spectrum because we've all watched the same
-demos. The to-do app built in thirty seconds. The SaaS product from a
-weekend. The LinkedIn post that opens with "I'm just an idea guy but." Those
-demos are genuinely impressive, in roughly the way a dog riding a bicycle is
-impressive — the fact that it happens at all is remarkable, and also, you
-would not want to build production infrastructure the way that dog builds
-momentum.
+demos of some to-do app built in thirty seconds, or the SaaS product from an
+idea hatched over the weekend, or the LinkedIn post that opens with "I'm just
+an idea guy but...." Those demos or ideas are sometimes impressive, in roughly
+the way a dog riding a bicycle is impressive — the fact that it happens at all
+is remarkable, and also, you would not want to build production infrastructure
+the way that dog builds momentum.
 
 So that's not what I'm doing today. No demo. No claim that agents replace
 your team next quarter. Instead I want to give you a map, because for about
@@ -83,19 +84,39 @@ That's the talk.
 -->
 
 ---
-# S4 — anchor: AI is an amplifier
+# S4 — "DON'T PANIC" slide again)
+layout: image
+image: /images/dont-panic.png
+backgroundSize: fill
+hideBadge: true
+title: "DON'T PANIC"
+---
+
+<!--
+So that's not what we are going to do today. No demo. No claim that agents will
+replace your team next quarter. Instead we want to give you a map, because for
+the last few years (and if we're honest, for longer than that) the industry has
+been asking the wrong question. We keep asking what AI can build. The question
+that actually matters, though, is the one your platform team will ask you in six
+weeks whether you're ready or not: how do you ship this without making everyone
+furious?
+
+That's the talk.
+-->
+
+---
+# S5 — anchor: AI is an amplifier
 layout: quote
-attribution: DORA, 2025
+attribution: DevOps Research and Assessment (DORA), 2025
 role: n = 5,000
 ---
 
 AI is an amplifier.
 
 <!--
-Here's the thesis, and we'll spend the next forty minutes earning it. DORA —
-the group that's been studying engineering performance for over a decade —
-surveyed five thousand technology professionals last year and ran more than a
-hundred hours of qualitative interviews. Their conclusion, boiled down to one
+DORA is a group that's been studying engineering performance for over a decade —
+they surveyed 5,000 technology professionals last year and ran more than a
+hundred hours of qualitative interviews. Their conclusion boiled down to one
 sentence worth writing on your hand: AI is an amplifier. It doesn't fix
 anything. It takes whatever's already true about your organization and makes
 more of it. High-performing teams get faster. Struggling teams get worse,
@@ -104,9 +125,9 @@ different angle — it shows you who you already were.
 -->
 
 ---
-# S5 — CircleCI throughput stat
+# S6 — CircleCI throughput stat
 layout: stats
-title: "+59% CI throughput, year over year"
+title: "CI throughput increase is deceptive"
 stats:
   - value: "+59%"
     label: CI throughput, YoY
@@ -117,15 +138,41 @@ stats:
 ---
 
 <!--
-I'll give you a quick taste of what that looks like in practice. CircleCI
-looked at 28 million CI workflows over the past year and found throughput up
-59% year over year. That's a genuinely enormous number. But almost all of
-that gain sits with the top 5% of teams, who nearly doubled their output. The
+Here's an example of what this looks like in practice. [click]CircleCI looked at
+28 million CI workflows over the past year and found throughput was up 59%
+year over year. That's a significantly large number. [click]But almost all of that
+gain was from the top 5% of teams, who nearly doubled their output. The
 median team improved 4%. The bottom quarter improved not at all.
 
 Same tools. Same models. Wildly different outcomes. That's the amplifier
 effect, in real operational data, not a survey.
+-->
 
+---
+# S7 - Let's not panic
+layout: two-cols-header
+layoutClass: wwt-header-center
+---
+
+# Our three takeaways
+
+::left::
+
+![dont-panic](/images/dont-panic.png)
+
+::right::
+
+1. Why some teams are pulling ahead while most aren't
+2. What the actual bottleneck is now — it has moved, and it has a name
+3. A set of steps you can bring to your VP on Monday that fit in a Jira ticket rather than a strategy deck
+
+<style>
+  ol, ul {
+    list-style-type: decimal;
+  }
+</style>
+
+<!--
 Three things I want you to leave with today: why some teams are pulling ahead
 while most aren't, what the actual bottleneck is now — it has moved, and it
 has a name — and a set of steps you can bring to your VP on Monday that fit
@@ -135,10 +182,11 @@ Don't panic. Let's get into it.
 -->
 
 ---
-# S6 — Section 1 opener ("Section 1: The Map of Where We Actually Are")
-# number: dropped — with the 4 mid-talk dividers (S11/S23/S30/S38) hidden,
+# S7 — Section 1 opener ("Section 1: The Map of Where We Actually Are")
+# number: dropped — with the 4 mid-talk dividers (S12/S24/S31/S39) hidden,
 # a lone "01" numeral would read as a broken 1-of-6 sequence. Titled break
 # instead; section.vue already guards this with v-if="$frontmatter?.number".
+# Jeremy
 layout: section
 title: Mostly Harmless
 ---
@@ -150,13 +198,13 @@ dictated research that gets trimmed for space. It's also roughly what most
 CTOs will tell you about their AI strategy if you catch them off guard. Both
 are technically true and both leave out a lot.
 
-So let's fill in the gap. Before we get to any data, we need a shared sense
+So let's fill in the gaps. Before we get to any data, we need a shared sense
 of where teams actually sit, because "agentic DevOps" gets used loosely
 enough that it's stopped meaning much. Broadly, there are three places.
 -->
 
 ---
-# S7 — the three maturity tiers
+# S8 — the three maturity tiers
 layout: process
 title: Where teams actually sit
 steps:
@@ -169,19 +217,19 @@ steps:
 ---
 
 <!--
-Most of you are in the first one: AI-assisted. Developers using these tools
+[click]Most of you are in the first one: AI-assisted. Developers using these tools
 individually, mostly for autocomplete and for explaining code they didn't
 write. There's rarely governance and rarely measurement. Sonar found that
 72% of developers who've tried AI use it daily now, and the average team has
 four different tools running at once with nobody coordinating them. This
 isn't a bad place to start. It's just not a place to stay.
 
-Fewer of you are in the second: AI-optimized. There's a strategy, tool
+[click]Fewer of you are in the second: AI-optimized. There's a strategy, tool
 selection, security review, procurement that doesn't take six months.
 Task-level efficiency gets measured. This is roughly the top quarter of
 organizations.
 
-And a small number of you are in the third: agent-augmented. Agents doing
+[click]And a small number of you are in the third: agent-augmented. Agents doing
 real end-to-end work — opening pull requests, running test suites, proposing
 rollbacks at three in the morning instead of paging someone. The human moves
 from being in the loop on every step to being over the loop, setting policy
@@ -189,7 +237,7 @@ and spot-checking outcomes. This is the top 5%, and it's the destination.
 -->
 
 ---
-# S8 — audience gut-check
+# S9 — audience gut-check
 layout: default
 ---
 
@@ -213,7 +261,7 @@ this whole talk is about.
 -->
 
 ---
-# S9 — J-curve, unlabeled
+# S10 — J-curve, unlabeled
 layout: default
 ---
 
@@ -228,7 +276,7 @@ J-curve.
 -->
 
 ---
-# S10 — J-curve, labeled
+# S11 — J-curve, labeled
 layout: default
 ---
 
@@ -254,10 +302,12 @@ at what it actually looks like.
 -->
 
 ---
-# S11 — Section 2 opener ("Section 2: Where the Bottleneck Moved").
+# S12 — Section 2 opener ("Section 2: Where the Bottleneck Moved").
 # Hidden (v8 merge, 2026-07-31) — mid-talk section dividers cut for pacing.
 # Its speaker-note opener (the Vogons/hyperspace-bypass beat) moved to the
-# top of S12's notes below so the Hitchhiker callback survives the hide.
+# top of S13's notes below so the Hitchhiker callback survives the hide.
+#
+# PJ
 layout: section
 number: "02"
 title: The Hyperspace Bypass
@@ -274,7 +324,7 @@ Everything downstream is finding out what that costs.
 -->
 
 ---
-# S12 — three views on AI ROI
+# S13 — three views on AI ROI
 layout: default
 ---
 
@@ -350,7 +400,7 @@ whether AI works. It's for whom, and under what conditions.
 -->
 
 ---
-# S13 — the DORA credibility caveat (must read candid, not combative)
+# S14 — the DORA credibility caveat (must read candid, not combative)
 # v8 correction: previously implied a second study had already found a
 # problem with the AI-adoption/performance correlation. Stride's study is
 # pre-registered, not published — corrected below. Body also de-scripted:
@@ -401,10 +451,11 @@ there.
 -->
 
 ---
-# S14 — pivot line (supporting principle, smaller than S35/S50)
-# v8: raised from 28px (was rendering smaller than a routine quote's
-# default 36px — a hierarchy inversion) to 40px: above default, still below
-# S35's 56px and S50's 44px.
+# S15 — pivot line (supporting principle, smaller than S36/S51)
+# 2026-08-07: default quote text moved from 36px to 44px (global-top.vue),
+# matching S51's size — so this line's override moved from 40px to 48px to
+# hold the same relative gap and keep reading as a step up, not a step down:
+# above the new 44px default, still below S36's 56px.
 layout: quote
 ---
 
@@ -413,7 +464,7 @@ AI-hype industrial complex.
 
 <style>
 :deep(.wwt-quote__text) {
-  font-size: 40px !important;
+  font-size: 48px !important;
 }
 </style>
 
@@ -429,14 +480,14 @@ same story against people who weren't running a survey in the first place.
 -->
 
 ---
-# S14b — Atlassian corroboration (v8: NEW). Same candid register as S13,
+# S15b — Atlassian corroboration (v8: NEW). Same candid register as S14,
 # not a chart — a third source alongside CircleCI and Sonar.
 layout: default
 ---
 
 # It isn't just DORA
 
-Atlassian, independently this year: the **AI efficiency paradox** —
+Atlassian, independently this year: the **AI efficiency paradox** -
 individual output speeds up, then backs up at review and approval.
 
 <p class="wwt-caveat__note">Different company, different survey. No connection to DORA.</p>
@@ -460,7 +511,7 @@ people who weren't running a survey in the first place.
 -->
 
 ---
-# S15 — CircleCI scale stat
+# S16 — CircleCI scale stat
 # title added: stats.vue only renders an <h1> when title is set — this
 # slide had none, so it carried no heading landmark at all for screen-
 # reader "jump by heading" navigation (WCAG 1.3.1/2.4.6).
@@ -478,7 +529,7 @@ CI workflow runs from thousands of real teams and looked at what happened.
 -->
 
 ---
-# S16 — throughput growth by percentile
+# S17 — throughput growth by percentile
 layout: default
 ---
 
@@ -504,7 +555,7 @@ grew nothing at all.
 -->
 
 ---
-# S17 — MUST-NAIL: feature vs. main branch by percentile
+# S18 — MUST-NAIL: feature vs. main branch by percentile
 layout: default
 ---
 
@@ -541,8 +592,8 @@ The bottleneck moved. [pause]
 -->
 
 ---
-# S18 — MTTR stat
-# title added: see S15's note on stats.vue's heading gap.
+# S19 — MTTR stat
+# title added: see S16's note on stats.vue's heading gap.
 layout: stats
 title: Slower at fixing what breaks
 stats:
@@ -559,7 +610,7 @@ more of it.
 -->
 
 ---
-# S19 — main-branch success rate, now a two-step trend (v8: updated data)
+# S20 — main-branch success rate, now a two-step trend (v8: updated data)
 # stats.vue wraps items in <v-clicks>, so the two values build automatically
 # — no custom CSS needed for the reveal.
 layout: stats
@@ -586,7 +637,7 @@ in 2023 and 2024, and still well short of that 90% benchmark.
 -->
 
 ---
-# S19b — Merge Efficiency Ratio (v8: NEW)
+# S20b — Merge Efficiency Ratio (v8: NEW)
 layout: stats
 title: "Merge Efficiency Ratio — validation cycles per merged change"
 stats:
@@ -611,9 +662,9 @@ number to start tracking after this talk, that's a strong candidate.
 -->
 
 ---
-# S20 — the 12-FTE math, built line by line. ALTERNATE, hidden: S20b
-# (dollar-cost framing) is live instead. Swap `hide: true` between S20 and
-# S20b to re-frame for the room — FTEs for an engineering audience, dollars
+# S21 — the 12-FTE math, built line by line. ALTERNATE, hidden: S21b
+# (dollar-cost framing) is live instead. Swap `hide: true` between S21 and
+# S21b to re-frame for the room — FTEs for an engineering audience, dollars
 # for a budget-holding one. Not both-and (per v8 outline).
 layout: default
 hide: true
@@ -672,7 +723,7 @@ that never shows up on a headcount spreadsheet.
 -->
 
 ---
-# S20b — dollar-cost framing (v8: NEW). Live alternate to S20 — not both-and.
+# S21b — dollar-cost framing (v8: NEW). Live alternate to S21 — not both-and.
 layout: stats
 title: "50-developer team, ~3,000 changes a month"
 stats:
@@ -709,7 +760,7 @@ framing lands better with whoever controls your budget.
 -->
 
 ---
-# S21 — vanity metric line
+# S22 — vanity metric line
 layout: quote
 ---
 
@@ -722,7 +773,7 @@ lost the plot.
 -->
 
 ---
-# S22 — tokenmaxxing, three-panel build (comic timing, panel 3 reverses)
+# S23 — tokenmaxxing, three-panel build (comic timing, panel 3 reverses)
 layout: default
 ---
 
@@ -804,10 +855,12 @@ the planet, this year.
 -->
 
 ---
-# S23 — Section 3 opener ("Section 3: Paying the Verification Tax").
+# S24 — Section 3 opener ("Section 3: Paying the Verification Tax").
 # Hidden (v8 merge, 2026-07-31) — mid-talk section dividers cut for pacing.
-# Its speaker-note opener (the Babel fish beat) moved to the top of S24's
+# Its speaker-note opener (the Babel fish beat) moved to the top of S25's
 # notes below so the Hitchhiker callback survives the hide.
+#
+# Jeremy
 layout: section
 number: "03"
 title: The Babel Fish Problem
@@ -825,7 +878,7 @@ airtight, which is the bar I'm setting for what follows.
 -->
 
 ---
-# S24 — trust gap stat
+# S25 — trust gap stat
 layout: stats
 title: The gap is where incidents come from
 stats:
@@ -853,7 +906,7 @@ where your production incidents live.
 -->
 
 ---
-# S25 — "looks correct but isn't reliable"
+# S26 — "looks correct but isn't reliable"
 layout: quote
 attribution: 61% of developers
 role: Sonar, 2026
@@ -871,7 +924,7 @@ three weeks later it does the wrong thing under load.
 -->
 
 ---
-# S26 — the METR reveal: predicted → felt → measured
+# S27 — the METR reveal: predicted → felt → measured
 layout: default
 ---
 
@@ -929,7 +982,7 @@ actually happened.
 -->
 
 ---
-# S27 — METR epilogue (first cut candidate if running long)
+# S28 — METR epilogue (first cut candidate if running long)
 layout: default
 ---
 
@@ -954,9 +1007,9 @@ proposes. A human disposes.
 -->
 
 ---
-# S28 — DORA 2025 AI effects. Bridge beat now written into notes below.
+# S29 — DORA 2025 AI effects. Bridge beat now written into notes below.
 # Hidden for the 40-min delivery (v8 merge, 2026-07-31) — deck already carries
-# this argument via Sonar (S24/25) and the METR RCT (S26/27). Un-hide by
+# this argument via Sonar (S25/26) and the METR RCT (S27/28). Un-hide by
 # deleting the hide: line if building a longer version of the talk.
 layout: default
 hide: true
@@ -997,7 +1050,7 @@ the source report).
 -->
 
 ---
-# S29 — AI proposes, humans dispose
+# S30 — AI proposes, humans dispose
 layout: quote
 role: Every AI output is a junior dev's first PR.
 ---
@@ -1020,10 +1073,12 @@ room for the post-incident review.
 -->
 
 ---
-# S30 — Section 4 opener ("Section 4: Where You Actually Are").
+# S31 — Section 4 opener ("Section 4: Where You Actually Are").
 # Hidden (v8 merge, 2026-07-31) — mid-talk section dividers cut for pacing.
-# Its speaker-note opener (the towel beat) moved to the top of S31's notes
+# Its speaker-note opener (the towel beat) moved to the top of S32's notes
 # below so the Hitchhiker callback survives the hide.
+#
+# PJ
 layout: section
 number: "04"
 title: Where Your Towel Won't Save You
@@ -1042,7 +1097,7 @@ somewhere.
 -->
 
 ---
-# S31 — MUST-NAIL: seven archetypes, six visual groupings (holds ~2.5 min)
+# S32 — MUST-NAIL: seven archetypes, six visual groupings (holds ~2.5 min)
 layout: default
 ---
 
@@ -1093,8 +1148,8 @@ can't tell which group you're in, that itself is a signal.
 -->
 
 ---
-# S32 — 38% / 40% split stat
-# title added: see S15's note on stats.vue's heading gap.
+# S33 — 38% / 40% split stat
+# title added: see S16's note on stats.vue's heading gap.
 layout: stats
 title: Add it up
 stats:
@@ -1112,7 +1167,7 @@ drift there on their own.
 -->
 
 ---
-# S33 — the shadow AI economy stat
+# S34 — the shadow AI economy stat
 layout: stats
 title: The shadow AI economy
 stats:
@@ -1134,7 +1189,7 @@ consumer one.
 -->
 
 ---
-# S34 — juniors vs. seniors
+# S35 — juniors vs. seniors
 layout: comparison
 title: The experience gap — Sonar 2026
 left:
@@ -1160,7 +1215,7 @@ needs to be sitting on top of AI-generated code specifically.
 -->
 
 ---
-# S35 — MUST-NAIL ANCHOR: largest treatment in the deck
+# S36 — MUST-NAIL ANCHOR: largest treatment in the deck
 layout: quote
 dark: true
 ---
@@ -1182,7 +1237,7 @@ anyone else building software.
 -->
 
 ---
-# S36 — MUST-NAIL: Amazon Kiro timeline (v8: 4 events, specific figures).
+# S37 — MUST-NAIL: Amazon Kiro timeline (v8: 4 events, specific figures).
 # Tone: sober and factual — the point is "this happens to the best," not a
 # dunk. timeline.vue has no body slot, so the Amazon-dispute note attaches to
 # the Mar 5 event's own detail rather than floating as a separate footnote.
@@ -1244,7 +1299,7 @@ It's a hope wearing a strategy's clothes.
 -->
 
 ---
-# S37 — bridge
+# S38 — bridge
 layout: default
 ---
 
@@ -1269,13 +1324,15 @@ verification to catch it when it's wrong.
 -->
 
 ---
-# S38 — Section 5 opener ("Section 5: How to Flatten the Curve").
+# S39 — Section 5 opener ("Section 5: How to Flatten the Curve").
 # Hidden (v8 merge, 2026-07-31) — mid-talk section dividers cut for pacing.
-# Its speaker-note opener moved to the top of S39's notes below so the beat
+# Its speaker-note opener moved to the top of S40's notes below so the beat
 # survives the hide.
+#
+# PJ
 layout: section
 number: "05"
-title: Vibe Then Verify
+title: Build, but then Verify
 hide: true
 ---
 
@@ -1287,7 +1344,7 @@ are actually flattening it.
 -->
 
 ---
-# S39 — vibe then verify
+# S40 — vibe then verify
 layout: quote
 role: Generate fast. Validate harder.
 ---
@@ -1295,7 +1352,7 @@ role: Generate fast. Validate harder.
 Vibe, then verify.
 
 <style>
-/* Same empty-attribution gap as S29 — see that slide's note. */
+/* Same empty-attribution gap as S30 — see that slide's note. */
 :deep(.wwt-quote__attribution:empty) {
   display: none;
 }
@@ -1313,7 +1370,7 @@ currently checking.
 -->
 
 ---
-# S40 — self-healing tests, before/after
+# S41 — self-healing tests, before/after
 layout: comparison
 title: Self-healing test automation (vendor-reported figures)
 left:
@@ -1341,7 +1398,7 @@ not in question.
 -->
 
 ---
-# S41 — progressive delivery flow
+# S42 — progressive delivery flow
 layout: default
 ---
 
@@ -1362,8 +1419,8 @@ it into seconds.
 -->
 
 ---
-# S42 — verification layer stat
-# title added: see S15's note on stats.vue's heading gap.
+# S43 — verification layer stat
+# title added: see S16's note on stats.vue's heading gap.
 layout: stats
 title: The cost of skipping it
 stats:
@@ -1391,7 +1448,7 @@ repeatedly in every code review.
 -->
 
 ---
-# S43 — Coinbase contrast (second cut candidate if running long)
+# S44 — Coinbase contrast (second cut candidate if running long)
 layout: default
 ---
 
@@ -1406,7 +1463,7 @@ on purpose instead of learned the hard way in a postmortem.
 -->
 
 ---
-# S44 — DORA AI Capabilities Model
+# S45 — DORA AI Capabilities Model
 # NOT `layout: process`: that layout's steps grid uses fixed equal-width
 # columns with no wrapping, and empirically overflows past the slide edge
 # at 6+ items (confirmed by rendering it — only 5 of 6 columns are visible,
@@ -1512,7 +1569,7 @@ systems problem, not a tools problem.
 -->
 
 ---
-# S45 — MCP schematic (trimmed vs v1, fewer annotations)
+# S46 — MCP schematic (trimmed vs v1, fewer annotations)
 layout: default
 ---
 
@@ -1529,7 +1586,7 @@ If you're an architect, it's worth a weekend of reading.
 -->
 
 ---
-# S46 — systems problem, not a tools problem
+# S47 — systems problem, not a tools problem
 layout: quote
 attribution: DORA, 2026
 ---
@@ -1541,9 +1598,11 @@ Vibe, then verify. Generate fast. Check harder.
 -->
 
 ---
-# S47 — Closing opener
-# number: dropped — matches S6; a titled break, not a numbered 6th section
-# now that S11/S23/S30/S38 are hidden. See S6's note for the full rationale.
+# S48 — Closing opener
+# number: dropped — matches S7; a titled break, not a numbered 6th section
+# now that S12/S24/S31/S39 are hidden. See S7's note for the full rationale.
+#
+# Jeremy
 layout: section
 title: The Roadmap
 ---
@@ -1553,7 +1612,7 @@ Three concrete steps to take home.
 -->
 
 ---
-# S48 — three-step pilot playbook
+# S49 — three-step pilot playbook
 layout: process
 title: Three steps to take home
 steps:
@@ -1590,7 +1649,7 @@ letting it happen to you by accident.
 -->
 
 ---
-# S49 — code is a liability
+# S50 — code is a liability
 layout: quote
 attribution: Software Engineering at Google
 role: via DORA 2026
@@ -1604,7 +1663,7 @@ long-term dwarfs the cost of writing it in the first place.
 -->
 
 ---
-# S50 — most quotable line, biggest/cleanest treatment
+# S51 — most quotable line, biggest/cleanest treatment
 layout: quote
 dark: true
 attribution: DORA, 2026
@@ -1626,7 +1685,7 @@ was. You just get more time for it.
 -->
 
 ---
-# S51 — "DON'T PANIC" bookend (closes the talk)
+# S52 — "DON'T PANIC" bookend (closes the talk)
 layout: section
 title: "DON'T PANIC"
 ---
@@ -1641,7 +1700,7 @@ The answer is: go clear the bottlenecks AI can't.
 -->
 
 ---
-# S52 — closing signoff (contact appended per plan)
+# S53 — closing signoff (contact appended per plan)
 layout: end
 signoff: So long, and thanks for all the boilerplate. · jeremy.meiss@wwt.com
 ---
