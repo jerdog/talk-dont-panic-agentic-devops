@@ -3,10 +3,10 @@ theme: wwt
 title: "Don't Panic"
 subtitle: A Hitchhiker's Guide to Agentic DevOps
 info: |
-  ## Don't Panic — A Hitchhiker's Guide to Agentic DevOps
+  ## Don't Panic - A Hitchhiker's Guide to Agentic DevOps
 
   We've all seen the demos where an AI writes a "To-Do" app in thirty seconds.
-  It's impressive, sure, in the same way a dog riding a bicycle is impressive —
+  It's impressive, sure, in the same way a dog riding a bicycle is impressive -
   but it's not exactly how we build production-grade software. In the real
   world the SDLC is messy, our pipelines are held together by legacy YAML, and
   "moving fast" usually means "breaking things we didn't know existed."
@@ -14,7 +14,7 @@ info: |
   This talk looks past the hype and into the data: DORA, CircleCI, Sonar, and
   METR's own randomized controlled trial, plus what happened when Meta, Uber,
   and Amazon took agentic AI further than almost anyone else this year. AI is
-  an amplifier — it makes strong teams stronger and struggling teams worse,
+  an amplifier - it makes strong teams stronger and struggling teams worse,
   faster. The question isn't what AI can build. It's how you ship this without
   making everyone furious.
 
@@ -39,7 +39,7 @@ Development, much less our world today, I don't know what else does.
 -->
 
 ---
-# S2 — "DON'T PANIC" bookend (opens the talk)
+# S2 - "DON'T PANIC" bookend (opens the talk)
 layout: image
 image: /images/dont-panic.png
 backgroundSize: fill
@@ -57,7 +57,7 @@ behind" wearing a nicer shirt.
 -->
 
 ---
-# S3 — dog on a bicycle (needs a real photo — see public/images/dog-on-a-bicycle.svg)
+# S3 - dog on a bicycle (needs a real photo - see public/images/dog-on-a-bicycle.svg)
 layout: image
 image: /images/golden-retriever-on-bicycle.png
 backgroundSize: fit
@@ -69,13 +69,13 @@ Most of us are somewhere on that spectrum because we've all watched the same
 demos of some to-do app built in thirty seconds, or the SaaS product from an
 idea hatched over the weekend, or the LinkedIn post that opens with "I'm just
 an idea guy but...." Those demos or ideas are sometimes impressive, in roughly
-the way a dog riding a bicycle is impressive — the fact that it happens at all
+the way a dog riding a bicycle is impressive - the fact that it happens at all
 is remarkable, and also, you would not want to build production infrastructure
 the way that dog builds momentum.
 -->
 
 ---
-# S4 — "DON'T PANIC" slide again)
+# S4 - "DON'T PANIC" slide again)
 layout: image
 image: /images/dont-panic.png
 backgroundSize: fill
@@ -116,7 +116,7 @@ speakers:
 # Jeremy Meiss
 
 ---
-# S5 — anchor: AI is an amplifier
+# S5 - anchor: AI is an amplifier
 layout: quote
 attribution: DevOps Research and Assessment (DORA), 2025
 role: n = 5,000
@@ -125,24 +125,24 @@ role: n = 5,000
 AI is an amplifier.
 
 <!--
-DORA is a group that's been studying engineering performance for over a decade —
+DORA is a group that's been studying engineering performance for over a decade -
 they surveyed 5,000 technology professionals last year and ran more than a
 hundred hours of qualitative interviews. Their conclusion boiled down to one
 sentence worth writing on your hand: AI is an amplifier. It doesn't fix
 anything. It takes whatever's already true about your organization and makes
 more of it. High-performing teams get faster. Struggling teams get worse,
 faster. DORA also calls it a mirror, which I think is the same idea from a
-different angle — it shows you who you already were.
+different angle - it shows you who you already were.
 -->
 
 ---
-# S6 — CircleCI throughput stat
+# S6 - CircleCI throughput stat
 layout: stats
 title: "CI throughput increase is deceptive"
 stats:
   - value: "+59%"
     label: CI throughput, YoY
-    caption: 28M workflows analyzed — CircleCI 2026
+    caption: 28M workflows analyzed - CircleCI 2026
   - value: "Top 5%"
     label: where almost all of it sits
     caption: median team +4% · bottom quartile +0%
@@ -162,7 +162,7 @@ effect, in real operational data, not a survey.
 ---
 # S7 - Let's not panic
 layout: two-cols-header
-layoutClass: wwt-header-center
+layoutClass: wwt-header-center wwt-cols-center
 ---
 
 # Our three takeaways
@@ -174,7 +174,7 @@ layoutClass: wwt-header-center
 ::right::
 
 1. Why some teams are pulling ahead while most aren't
-2. What the actual bottleneck is now — it has moved, and it has a name
+2. What the actual bottleneck is now - it has moved, and it has a name
 3. A set of steps you can bring to your VP on Monday that fit in a Jira ticket rather than a strategy deck
 
 <style>
@@ -185,21 +185,21 @@ layoutClass: wwt-header-center
 
 <!--
 Three things I want you to leave with today: why some teams are pulling ahead
-while most aren't, what the actual bottleneck is now — it has moved, and it
-has a name — and a set of steps you can bring to your VP on Monday that fit
+while most aren't, what the actual bottleneck is now - it has moved, and it
+has a name - and a set of steps you can bring to your VP on Monday that fit
 in a Jira ticket rather than a strategy deck.
 
 Don't panic. Let's get into it.
 -->
 
 ---
-# S7 — Section 1 opener ("Section 1: The Map of Where We Actually Are")
-# number: dropped — with the 4 mid-talk dividers (S12/S24/S31/S39) hidden,
+# S7 - Section 1 opener ("Section 1: The Map of Where We Actually Are")
+# number: dropped - with the 4 mid-talk dividers (S12/S24/S31/S39) hidden,
 # a lone "01" numeral would read as a broken 1-of-6 sequence. Titled break
 # instead; section.vue already guards this with v-if="$frontmatter?.number".
 # Jeremy
 layout: section
-title: Mostly Harmless
+title: '"Mostly Harmless"'
 ---
 
 <!--
@@ -215,14 +215,14 @@ enough that it's stopped meaning much. Broadly, there are three places.
 -->
 
 ---
-# S8 — the three maturity tiers
+# S8 - the three maturity tiers
 layout: process
 title: Where teams actually sit
 steps:
   - title: AI-Assisted
     detail: Copilot, Cursor, ChatGPT for the odd question. 72% use it daily (Sonar 2026). Four tools per team, no governance.
   - title: AI-Optimized
-    detail: An actual decision got made — strategy, tool selection, security review. Roughly the top quarter.
+    detail: An actual decision got made - strategy, tool selection, security review. Roughly the top quarter.
   - title: Agent-Augmented
     detail: Agents doing real end-to-end work. The human moves from in the loop to over the loop. The top 5%.
 ---
@@ -241,14 +241,14 @@ Task-level efficiency gets measured. This is roughly the top quarter of
 organizations.
 
 [click]And a small number of you are in the third: agent-augmented. Agents doing
-real end-to-end work — opening pull requests, running test suites, proposing
+real end-to-end work - opening pull requests, running test suites, proposing
 rollbacks at three in the morning instead of paging someone. The human moves
 from being in the loop on every step to being over the loop, setting policy
 and spot-checking outcomes. This is the top 5%, and it's the destination.
 -->
 
 ---
-# S9 — audience gut-check
+# S9 - audience gut-check
 layout: default
 ---
 
@@ -266,13 +266,13 @@ layout: default
 
 <!--
 Quick show of hands, if you're willing. How many of you would call your org
-agent-augmented? [pause] Now — how many would call it AI-assisted with a
+agent-augmented? [pause] Now - how many would call it AI-assisted with a
 slide deck that claims agent-augmented? [pause] That gap is basically what
 this whole talk is about.
 -->
 
 ---
-# S10 — J-curve, unlabeled
+# S10 - J-curve, unlabeled
 layout: default
 ---
 
@@ -287,7 +287,7 @@ J-curve.
 -->
 
 ---
-# S11 — J-curve, labeled
+# S11 - J-curve, labeled
 layout: default
 ---
 
@@ -300,7 +300,7 @@ Serious AI adoption produces a dip before it produces growth, and three
 things cause it. A learning curve, since your team has to figure out new
 workflows. What DORA calls the verification tax, meaning the time spent
 checking whether AI output can actually be trusted. And pipeline adaptation,
-since your downstream systems — testing, review, deployment — have to scale
+since your downstream systems - testing, review, deployment - have to scale
 to handle more volume than they were built for.
 
 The trap, and DORA is explicit about this, is that leadership sees the dip
@@ -313,8 +313,8 @@ at what it actually looks like.
 -->
 
 ---
-# S12 — Section 2 opener ("Section 2: Where the Bottleneck Moved").
-# Hidden (v8 merge, 2026-07-31) — mid-talk section dividers cut for pacing.
+# S12 - Section 2 opener ("Section 2: Where the Bottleneck Moved").
+# Hidden (v8 merge, 2026-07-31) - mid-talk section dividers cut for pacing.
 # Its speaker-note opener (the Vogons/hyperspace-bypass beat) moved to the
 # top of S13's notes below so the Hitchhiker callback survives the hide.
 #
@@ -335,7 +335,7 @@ Everything downstream is finding out what that costs.
 -->
 
 ---
-# S13 — three views on AI ROI
+# S13 - three views on AI ROI
 layout: default
 ---
 
@@ -356,7 +356,7 @@ layout: default
 <div class="wwt-threeviews__card">
 <h3>MIT NANDA</h3>
 <p class="wwt-threeviews__tag">Pessimistic</p>
-<p>The shadow AI economy — official tools underdeliver, people route around them.</p>
+<p>The shadow AI economy - official tools underdeliver, people route around them.</p>
 </div>
 </v-clicks>
 </div>
@@ -381,7 +381,7 @@ layout: default
   letter-spacing: 0.04em;
   /* Dark-mode override lives in global-top.vue's unscoped style block:
      :global(.dark) here compiles to nothing in this project's Slidev/Vue
-     toolchain — confirmed via computed style, not just visually — the same
+     toolchain - confirmed via computed style, not just visually - the same
      failure found in JCurve.vue/McpSchematic.vue/BarChart.vue. See that file
      for the fix and the full explanation. --wwt-primary-lightest flips to a
      near-transparent dark tint in dark mode (tokens.css) but
@@ -391,34 +391,34 @@ layout: default
 
 <!--
 There isn't a consensus yet on what AI adoption is actually returning. Three
-sources, three different conclusions. Google Cloud's 2025 report on AI ROI
-says 78% of executives have seen a return on at least one use case — we'll acll that the optimistic read. Stanford's AI Index says adoption is everywhere but real
-structural change is rare, and most companies land somewhere flat — this is the
-neutral read. We also have MIT's NANDA project describes what they call the shadow AI economy: official tools underdelivering while employees quietly route around
-them using unauthorized consumer apps — the pessimistic read.
+sources, three different conclusions. [click]Google Cloud's 2025 report on AI ROI
+says 78% of executives have seen a return on at least one use case - we'll acll that the optimistic read. [click]Stanford's AI Index says adoption is everywhere but real
+structural change is rare, and most companies land somewhere flat - this is the
+neutral read. [click]We also have MIT's NANDA project describes what they call the shadow AI economy: official tools underdelivering while employees quietly route around
+them using unauthorized consumer apps - the pessimistic read.
 
 All three are true at once, which tells you the interesting question isn't
 whether AI works. It's for whom, and under what conditions. It also highlights the importance of who you are asking. On one end of the spectrum, you have executives who aren't actively using the tools saying they are amazing. On the other end, developers who are expected to use these tools daily are reporting they aren't as effective as advertised.
 -->
 
 ---
-# S14 — the DORA credibility caveat (must read candid, not combative)
+# S14 - the DORA credibility caveat (must read candid, not combative)
 # v8 correction: previously implied a second study had already found a
 # problem with the AI-adoption/performance correlation. Stride's study is
-# pre-registered, not published — corrected below. Body also de-scripted:
+# pre-registered, not published - corrected below. Body also de-scripted:
 # was verbatim first-person speaker prose; terse fragments per the outline.
 layout: default
 ---
 
 # Worth naming honestly
 
-DORA's 2026 ROI report has taken real criticism this year — some call it
+DORA's 2026 ROI report has taken real criticism this year - some call it
 more brochure than research.
 
 <p class="wwt-caveat__note">
 Separately: Stride Research has <strong>pre-registered</strong> a study
 testing whether AI adoption still correlates with performance once you
-control for company size. Results expected later this year — not published
+control for company size. Results expected later this year - not published
 yet.
 </p>
 
@@ -442,7 +442,7 @@ reframe what they'd previously called an anomaly in their own 2024 numbers.
 Separately, a research group called Stride has pre-registered a study
 specifically testing whether the correlation between AI adoption and elite
 performance survives controls for company size and existing engineering
-maturity — in other words, whether good teams are just good at everything,
+maturity - in other words, whether good teams are just good at everything,
 AI included, rather than AI being what makes them good. Worth being precise
 about where that actually stands: the methodology is public, the hypothesis
 is locked in, and the results are expected later this year. We don't have the
@@ -453,9 +453,9 @@ there.
 -->
 
 ---
-# S15 — pivot line (supporting principle, smaller than S36/S51)
+# S15 - pivot line (supporting principle, smaller than S36/S51)
 # 2026-08-07: default quote text moved from 36px to 44px (global-top.vue),
-# matching S51's size — so this line's override moved from 40px to 48px to
+# matching S51's size - so this line's override moved from 40px to 48px to
 # hold the same relative gap and keep reading as a step up, not a step down:
 # above the new 44px default, still below S36's 56px.
 layout: quote
@@ -477,8 +477,8 @@ hype. Both have a product.
 -->
 
 ---
-# S15b — Atlassian corroboration (v8: NEW). Same candid register as S14,
-# not a chart — a third source alongside CircleCI and Sonar.
+# S15b - Atlassian corroboration (v8: NEW). Same candid register as S14,
+# not a chart - a third source alongside CircleCI and Sonar.
 layout: default
 ---
 
@@ -508,8 +508,8 @@ people who weren't running a survey in the first place.
 -->
 
 ---
-# S16 — CircleCI scale stat
-# title added: stats.vue only renders an <h1> when title is set — this
+# S16 - CircleCI scale stat
+# title added: stats.vue only renders an <h1> when title is set - this
 # slide had none, so it carried no heading landmark at all for screen-
 # reader "jump by heading" navigation (WCAG 1.3.1/2.4.6).
 layout: stats
@@ -517,7 +517,7 @@ title: Not a survey
 stats:
   - value: "28,000,000"
     label: CI workflows analyzed
-    caption: CircleCI 2026 — not a survey, actual pipeline data
+    caption: CircleCI 2026 - not a survey, actual pipeline data
 ---
 
 <!--
@@ -526,7 +526,7 @@ CI workflow runs from thousands of real teams and looked at what happened.
 -->
 
 ---
-# S17 — throughput growth by percentile
+# S17 - throughput growth by percentile
 layout: default
 ---
 
@@ -552,7 +552,7 @@ grew nothing at all.
 -->
 
 ---
-# S18 — MUST-NAIL: feature vs. main branch by percentile
+# S18 - MUST-NAIL: feature vs. main branch by percentile
 layout: default
 ---
 
@@ -571,8 +571,8 @@ layout: default
 
 <!--
 Here's the number that made me stop and reread the chart. CircleCI split
-this by branch type. On feature branches — where people prototype and
-experiment — throughput rose for almost everyone, including a 15% bump for
+this by branch type. On feature branches - where people prototype and
+experiment - throughput rose for almost everyone, including a 15% bump for
 the median team and a 50% bump for the top decile. But on the main branch,
 the branch that actually ships to customers, the median team's throughput
 fell 7%. The top decile was flat. Only the top 5% managed to grow on both,
@@ -582,34 +582,34 @@ Sit with that for a second. Developers across the industry are writing more
 code than they ever have. Almost none of it is reaching production. Activity
 is up. Delivery isn't. The old bottleneck was how fast someone could type.
 That bottleneck is gone. What's replaced it is integration, review, and
-recovery — the verification tax, showing up in raw pipeline data with no
+recovery - the verification tax, showing up in raw pipeline data with no
 survey involved anywhere.
 
 The bottleneck moved. [pause]
 -->
 
 ---
-# S19 — MTTR stat
+# S19 - MTTR stat
 # title added: see S16's note on stats.vue's heading gap.
 layout: stats
 title: Slower at fixing what breaks
 stats:
   - value: "72 min"
     label: median time to recover
-    caption: "+13% YoY · feature branches: 80 min (+25%) — CircleCI 2026"
+    caption: "+13% YoY · feature branches: 80 min (+25%) - CircleCI 2026"
 ---
 
 <!--
-Median time to recover from a failed build is now 72 minutes, up 13% from
+Median time to recover from a failed build [click]is now 72 minutes, up 13% from
 last year. On feature branches it's closer to 80 minutes, up 25%. We're
 getting slower at fixing what breaks, at exactly the moment we're breaking
 more of it.
 -->
 
 ---
-# S20 — main-branch success rate, now a two-step trend (v8: updated data)
+# S20 - main-branch success rate, now a two-step trend (v8: updated data)
 # stats.vue wraps items in <v-clicks>, so the two values build automatically
-# — no custom CSS needed for the reveal.
+# - no custom CSS needed for the reveal.
 layout: stats
 title: Main-branch success rate
 stats:
@@ -618,11 +618,11 @@ stats:
     caption: "Lowest in 5+ years · benchmark is 90%"
   - value: "76.7%"
     label: March 2026
-    caption: "Improving — still short of the 2023–24 mid-80s and the 90% benchmark"
+    caption: "Improving - still short of the 2023–24 mid-80s and the 90% benchmark"
 ---
 
 <!--
-And main-branch success rate had dropped to 70.8% as of last September, the
+And main-branch success rate [click]had dropped to 70.8% as of last September, the
 lowest it had been in five years, against an industry benchmark of 90%.
 Roughly three in ten attempts to merge into production code were failing
 outright.
@@ -634,9 +634,9 @@ in 2023 and 2024, and still well short of that 90% benchmark.
 -->
 
 ---
-# S20b — Merge Efficiency Ratio (v8: NEW)
+# S20b - Merge Efficiency Ratio (v8: NEW)
 layout: stats
-title: "Merge Efficiency Ratio — validation cycles per merged change"
+title: "Merge Efficiency Ratio - validation cycles per merged change"
 stats:
   - value: "3.9"
     label: Median team
@@ -649,19 +649,19 @@ stats:
 
 <!--
 That same follow-up report introduced a metric worth stealing for your own
-dashboards: merge efficiency ratio, or MER, which counts how many validation
+dashboards: [click]merge efficiency ratio, or MER, which counts how many validation
 cycles it actually takes to get one change onto the main branch. It's a
 direct read on how much rework is hiding behind whatever your throughput
-number says. The median team runs at an MER of about 3.9. The top 5% run at
-2.6. A small cohort of twenty elite organizations in the same dataset run at
+number says. The median team runs at an MER of about 3.9. [click]The top 5% run at
+2.6. [click]A small cohort of twenty elite organizations in the same dataset run at
 1.3, and improved on that by 21% in a single year. If you take away one new
 number to start tracking after this talk, that's a strong candidate.
 -->
 
 ---
-# S21 — the 12-FTE math, built line by line. ALTERNATE, hidden: S21b
+# S21 - the 12-FTE math, built line by line. ALTERNATE, hidden: S21b
 # (dollar-cost framing) is live instead. Swap `hide: true` between S21 and
-# S21b to re-frame for the room — FTEs for an engineering audience, dollars
+# S21b to re-frame for the room - FTEs for an engineering audience, dollars
 # for a budget-holding one. Not both-and (per v8 outline).
 layout: default
 hide: true
@@ -720,20 +720,20 @@ that never shows up on a headcount spreadsheet.
 -->
 
 ---
-# S21b — dollar-cost framing (v8: NEW). Live alternate to S21 — not both-and.
+# S21b - dollar-cost framing (v8: NEW). Live alternate to S21 - not both-and.
 layout: stats
 title: "50-developer team, ~3,000 changes a month"
 stats:
   - value: "$900K"
     label: a year at risk
-    caption: "Unoptimized workflows — agents idling until their context cache expires"
+    caption: "Unoptimized workflows - agents idling until their context cache expires"
   - value: "$700K+"
     label: recoverable
-    caption: "By moving routine validation earlier — CircleCI, July 2026"
+    caption: "By moving routine validation earlier - CircleCI, July 2026"
 ---
 
 <style>
-/* Red-to-blue shift, not red-to-green — the palette has no green
+/* Red-to-blue shift, not red-to-green - the palette has no green
    (tokens.css) and Stat.vue has no tone prop, so its value is always
    --wwt-primary-base by default. :deep() required: a bare .wwt-stat__value
    selector compiles to a stamped attribute that never matches. */
@@ -744,12 +744,12 @@ stats:
 
 <!--
 If FTEs feel a little abstract, here's the same story in dollars instead.
-That same recent CircleCI report modeled a fifty-developer team shipping
+[click]That same recent CircleCI report modeled a fifty-developer team shipping
 about three thousand changes a month at a fairly ordinary MER. Run that team
 through unoptimized, agent-heavy workflows with slow CI feedback and the
 friction costs something like nine hundred thousand dollars a year, a lot of
 it from agents sitting idle waiting for a green light long enough that their
-context cache expires and they have to start over from scratch. Move the
+context cache expires and they have to start over from scratch. [click]Move the
 routine checks earlier, into the loop where the code actually gets written
 instead of after it's already been pushed, and that same team can claw back
 seven hundred thousand dollars or more of it. FTEs or dollars, take whichever
@@ -757,7 +757,7 @@ framing lands better with whoever controls your budget.
 -->
 
 ---
-# S22 — vanity metric line
+# S22 - vanity metric line
 layout: quote
 ---
 
@@ -770,7 +770,7 @@ lost the plot.
 -->
 
 ---
-# S23 — tokenmaxxing, three-panel build (comic timing, panel 3 reverses)
+# S23 - tokenmaxxing, three-panel build (comic timing, panel 3 reverses)
 layout: default
 ---
 
@@ -779,7 +779,7 @@ layout: default
 <div class="wwt-tokenmax">
 <v-clicks>
 <div class="wwt-tokenmax__panel">
-<p class="wwt-tokenmax__label">Claudeonomics leaderboard — "Token Legend" tier</p>
+<p class="wwt-tokenmax__label">Claudeonomics leaderboard - "Token Legend" tier</p>
 <h3>Meta: 85,000 employees. 60 trillion tokens. One month.</h3>
 </div>
 <div class="wwt-tokenmax__panel">
@@ -792,7 +792,7 @@ layout: default
 </v-clicks>
 </div>
 
-<p class="wwt-tokenmax__source">Reported across multiple industry outlets, 2026 — figures not independently verified.</p>
+<p class="wwt-tokenmax__source">Reported across multiple industry outlets, 2026 - figures not independently verified.</p>
 
 <style>
 .wwt-tokenmax__source {
@@ -841,9 +841,9 @@ consumption in a single month.
 [click] Uber, separately, burned through its entire annual AI budget in four
 months.
 
-[click] You can guess the ending. Measuring tokens consumed without measuring
+You can guess the ending. Measuring tokens consumed without measuring
 what shipped is like judging a factory by its electric bill instead of what
-came off the line. Amazon killed its own internal leaderboard shortly after,
+came off the line. [click]Amazon killed its own internal leaderboard shortly after,
 reportedly under the internal line "don't use AI just to use AI."
 
 That's the vanity-metric mistake from earlier in this section, playing out
@@ -852,8 +852,8 @@ the planet, this year.
 -->
 
 ---
-# S24 — Section 3 opener ("Section 3: Paying the Verification Tax").
-# Hidden (v8 merge, 2026-07-31) — mid-talk section dividers cut for pacing.
+# S24 - Section 3 opener ("Section 3: Paying the Verification Tax").
+# Hidden (v8 merge, 2026-07-31) - mid-talk section dividers cut for pacing.
 # Its speaker-note opener (the Babel fish beat) moved to the top of S25's
 # notes below so the Hitchhiker callback survives the hide.
 #
@@ -868,14 +868,14 @@ hide: true
 Quick detour into the Babel fish. In the Hitchhiker's Guide, it's a small
 yellow creature you stick in your ear that translates any language into your
 own, instantly. Genuinely useful. Also, memorably, used in the book as a
-proof against the existence of God — the argument being that something this
+proof against the existence of God - the argument being that something this
 convenient couldn't have arisen naturally, so its existence disproves the
 faith required to believe in a creator. It's absurd and also kind of
 airtight, which is the bar I'm setting for what follows.
 -->
 
 ---
-# S25 — trust gap stat
+# S25 - trust gap stat
 layout: stats
 title: The gap is where incidents come from
 stats:
@@ -890,20 +890,20 @@ stats:
 Quick detour into the Babel fish. In the Hitchhiker's Guide, it's a small
 yellow creature you stick in your ear that translates any language into your
 own, instantly. Genuinely useful. Also, memorably, used in the book as a
-proof against the existence of God — the argument being that something this
+proof against the existence of God - the argument being that something this
 convenient couldn't have arisen naturally, so its existence disproves the
 faith required to believe in a creator. It's absurd and also kind of
 airtight, which is the bar I'm setting for what follows.
 
-Why does verification cost so much? Sonar asked 1,149 developers and found
+Why does verification cost so much? [click]Sonar asked 1,149 developers and found
 that 96% don't fully trust that AI-generated code is functionally correct.
-And yet only 48% of them always check it before committing. Ninety-six
-percent distrust, forty-eight percent verification — that gap is roughly
+[click]And yet only 48% of them always check it before committing. Ninety-six
+percent distrust, forty-eight percent verification - that gap is roughly
 where your production incidents live.
 -->
 
 ---
-# S26 — "looks correct but isn't reliable"
+# S26 - "looks correct but isn't reliable"
 layout: quote
 attribution: 61% of developers
 role: Sonar, 2026
@@ -915,13 +915,13 @@ Code that looks correct but isn't reliable.
 Sixty-one percent of developers put a specific name to the failure mode:
 code that looks correct but isn't reliable. This is a different kind of bug
 than what a junior developer typically produces. Junior mistakes tend to be
-loud — a stack trace, a compile error. AI mistakes tend to be quiet. The
+loud - a stack trace, a compile error. AI mistakes tend to be quiet. The
 code compiles. The tests pass. The logic reads fine on a first pass. Then
 three weeks later it does the wrong thing under load.
 -->
 
 ---
-# S27 — the METR reveal: predicted → felt → measured
+# S27 - the METR reveal: predicted → felt → measured
 layout: default
 ---
 
@@ -935,7 +935,7 @@ layout: default
 </v-clicks>
 </div>
 
-<p class="wwt-metr__source">METR, randomized controlled trial, July 2025 — 16 developers, 246 real tasks.</p>
+<p class="wwt-metr__source">METR, randomized controlled trial, July 2025 - 16 developers, 246 real tasks.</p>
 
 <style>
 .wwt-metr {
@@ -959,12 +959,12 @@ layout: default
 
 <!--
 In mid-2025, a nonprofit called METR ran an actual randomized controlled
-trial on AI coding productivity — the same basic design used in drug trials.
+trial on AI coding productivity - the same basic design used in drug trials.
 Sixteen experienced open-source developers, 246 real tasks, in codebases
 they'd already worked in for years. Each task got randomly assigned to
 either "AI allowed" or "AI not allowed."
 
-Before the study started, developers predicted AI would make them 24%
+[click]Before the study started, developers predicted AI would make them 24%
 faster.
 
 [click] After finishing, they believed they'd been about 20% faster.
@@ -974,19 +974,19 @@ faster.
 Predicted faster. Felt faster. Measured slower. If developers can be that
 wrong about their own experience using a tool, it's worth wondering how much
 we should trust anyone's gut feeling about whether AI is helping at the
-organizational level. Don't trust the sensation of speed — measure what
+organizational level. Don't trust the sensation of speed - measure what
 actually happened.
 -->
 
 ---
-# S28 — METR epilogue (first cut candidate if running long)
+# S28 - METR epilogue (first cut candidate if running long)
 layout: default
 ---
 
 # 2026: they tried to re-run it
 
 METR tried to re-run the study in early 2026 to see whether newer tools
-changed the result — and the study itself broke.
+changed the result - and the study itself broke.
 
 Too many developers refused the "no AI" condition, even for pay. There was
 no longer a clean control group left to recruit.
@@ -1004,8 +1004,8 @@ proposes. A human disposes.
 -->
 
 ---
-# S29 — DORA 2025 AI effects. Bridge beat now written into notes below.
-# Hidden for the 40-min delivery (v8 merge, 2026-07-31) — deck already carries
+# S29 - DORA 2025 AI effects. Bridge beat now written into notes below.
+# Hidden for the 40-min delivery (v8 merge, 2026-07-31) - deck already carries
 # this argument via Sonar (S25/26) and the METR RCT (S27/28). Un-hide by
 # deleting the hide: line if building a longer version of the talk.
 layout: default
@@ -1028,18 +1028,18 @@ hide: true
     { label: 'Job satisfaction / burnout', bars: [{ value: 1, tone: 'flat', display: 'flat' }] },
     { label: 'Friction in the dev process', bars: [{ value: 1, tone: 'flat', display: 'flat' }] },
   ]"
-  source="DORA 2025, n=5,000 — directional, not exact effect sizes."
+  source="DORA 2025, n=5,000 - directional, not exact effect sizes."
 />
 
 <!--
 DORA's own effects data tells a similar story to what we've just walked
 through: mostly positive, three flagged. Individual productivity, team and
-product performance, code and documentation quality, review speed — all up.
+product performance, code and documentation quality, review speed - all up.
 But delivery instability is up too, and job satisfaction and process
 friction are flat, not improved. Same shape as everything else in this
 section: the gains are real, and they don't come free.
 
-NOTE (2026-07-31): hidden for this delivery — see hide: true below. Un-hide
+NOTE (2026-07-31): hidden for this delivery - see hide: true below. Un-hide
 by deleting that line, but re-verify these effect sizes against
 import/research/DORA_State_of_AI-Assisted_Software_Development_2025.pdf
 first (TODO carried over from before: never independently confirmed against
@@ -1047,7 +1047,7 @@ the source report).
 -->
 
 ---
-# S30 — AI proposes, humans dispose
+# S30 - AI proposes, humans dispose
 layout: quote
 role: Every AI output is a junior dev's first PR.
 ---
@@ -1055,7 +1055,7 @@ role: Every AI output is a junior dev's first PR.
 AI proposes. Humans dispose.
 
 <style>
-/* No attribution: set — quote.vue renders that span regardless (no v-if),
+/* No attribution: set - quote.vue renders that span regardless (no v-if),
    so its empty content leaves a phantom line-height gap above role. Collapse it. */
 :deep(.wwt-quote__attribution:empty) {
   display: none;
@@ -1063,15 +1063,15 @@ AI proposes. Humans dispose.
 </style>
 
 <!--
-Every piece of AI output is a first draft from a junior engineer — not
+Every piece of AI output is a first draft from a junior engineer - not
 because the model is unintelligent, sometimes it's quite good, but because
 you're the one accountable for what ships, and the model will not be in the
 room for the post-incident review.
 -->
 
 ---
-# S31 — Section 4 opener ("Section 4: Where You Actually Are").
-# Hidden (v8 merge, 2026-07-31) — mid-talk section dividers cut for pacing.
+# S31 - Section 4 opener ("Section 4: Where You Actually Are").
+# Hidden (v8 merge, 2026-07-31) - mid-talk section dividers cut for pacing.
 # Its speaker-note opener (the towel beat) moved to the top of S32's notes
 # below so the Hitchhiker callback survives the hide.
 #
@@ -1094,7 +1094,7 @@ somewhere.
 -->
 
 ---
-# S32 — MUST-NAIL: seven archetypes, six visual groupings (holds ~2.5 min)
+# S32 - MUST-NAIL: seven archetypes, six visual groupings (holds ~2.5 min)
 layout: default
 ---
 
@@ -1117,8 +1117,8 @@ nowhere, because the systems are fine but the process eats every hour
 available. AI helps the individual, but the process drag absorbs whatever it
 gains you.
 
-Clusters four and five sit in the middle — high impact but low cadence at
-7%, and stable and methodical at 15% — both doing solid work at a moderate
+Clusters four and five sit in the middle - high impact but low cadence at
+7%, and stable and methodical at 15% - both doing solid work at a moderate
 pace with generally low burnout. AI tends to be a real multiplier for both
 once the surrounding infrastructure can keep up.
 
@@ -1136,7 +1136,7 @@ can't tell which group you're in, that itself is a signal.
 -->
 
 ---
-# S33 — 38% / 40% split stat
+# S33 - 38% / 40% split stat
 # title added: see S16's note on stats.vue's heading gap.
 layout: stats
 title: Add it up
@@ -1146,16 +1146,16 @@ stats:
     caption: clusters C1 + C2 + C3
   - value: "40%"
     label: high-performing
-    caption: clusters C6 + C7 — DORA 2025, n=5,000
+    caption: clusters C6 + C7 - DORA 2025, n=5,000
 ---
 
 <!--
-Two patterns push teams toward the worse end faster than they'd otherwise
+[click]Two patterns push teams toward the worse end faster [click]than they'd otherwise
 drift there on their own.
 -->
 
 ---
-# S34 — the shadow AI economy stat
+# S34 - the shadow AI economy stat
 layout: stats
 title: The shadow AI economy
 stats:
@@ -1163,23 +1163,23 @@ stats:
     label: AI tools per team
   - value: "35%"
     label: access via personal accounts
-    caption: ChatGPT 52% · Perplexity 63% — Sonar 2026
+    caption: ChatGPT 52% · Perplexity 63% - Sonar 2026
 ---
 
 <!--
-The first is what I'd call BYOAI culture. The average team now runs four
-different AI tools, and plenty of that use isn't sanctioned. Thirty-five
+The first is what I'd call BYOAI culture. [click]The average team now runs four
+different AI tools, and plenty of that use isn't sanctioned. [click]Thirty-five
 percent of developers access AI through personal accounts rather than
-company ones — 52% for ChatGPT specifically, 63% for Perplexity. This is the
+company ones - 52% for ChatGPT specifically, 63% for Perplexity. This is the
 shadow AI economy MIT NANDA described. The fix isn't banning personal
 accounts. It's making the sanctioned option genuinely better than the
 consumer one.
 -->
 
 ---
-# S35 — juniors vs. seniors
+# S35 - juniors vs. seniors
 layout: comparison
-title: The experience gap — Sonar 2026
+title: The experience gap - Sonar 2026
 left:
   title: Juniors
   points:
@@ -1203,7 +1203,7 @@ needs to be sitting on top of AI-generated code specifically.
 -->
 
 ---
-# S36 — MUST-NAIL ANCHOR: largest treatment in the deck
+# S36 - MUST-NAIL ANCHOR: largest treatment in the deck
 layout: quote
 dark: true
 ---
@@ -1225,14 +1225,14 @@ anyone else building software.
 -->
 
 ---
-# S37 — MUST-NAIL: Amazon Kiro timeline (v8: 4 events, specific figures).
-# Tone: sober and factual — the point is "this happens to the best," not a
+# S37 - MUST-NAIL: Amazon Kiro timeline (v8: 4 events, specific figures).
+# Tone: sober and factual - the point is "this happens to the best," not a
 # dunk. timeline.vue has no body slot, so the Amazon-dispute note attaches to
 # the Mar 5 event's own detail rather than floating as a separate footnote.
 # grid-auto-flow: column means 4 events = 4 equal columns. At 4 columns the
 # title's "(public reporting, 2025-2026)" qualifier plus long labels/details
 # genuinely overflowed past the footer at 1920x1080 (confirmed visually,
-# 2026-07-31) — trimmed the title to one line and shortened the Dec-2025 and
+# 2026-07-31) - trimmed the title to one line and shortened the Dec-2025 and
 # Amazon's-fix label/detail pairs to recover the vertical budget. The
 # "public reporting" framing moved to the speaker notes below; the real
 # dates on each event already carry the timeframe on screen.
@@ -1254,18 +1254,18 @@ events:
 ---
 
 <!--
-In December of 2025, one of Amazon's internal AI agents — a system called
-Kiro built to handle operational and coding work autonomously — was pointed
+In December of 2025, one of Amazon's internal AI agents - a system called
+Kiro built to handle operational and coding work autonomously - was pointed
 at a production issue. It decided the right move was to delete the
-environment and rebuild it from scratch. It was operating under an
+environment and rebuild it from scratch. [click]It was operating under an
 engineer's elevated permissions, so the standard two-person approval that
 would normally gate a change of that size simply didn't apply. The result: a
 thirteen-hour outage.
 
-Three months later, in March 2026, Amazon had a genuinely bad week, and this
+[click]Three months later, in March 2026, Amazon had a genuinely bad week, and this
 time there are real numbers attached to it. On March 2nd, an incident tied to
 AI-assisted changes caused 120,000 lost orders and 1.6 million website
-errors. Three days later, on March 5th, a second and considerably worse
+errors. [click]Three days later, on March 5th, a second and considerably worse
 incident took the U.S. site down for roughly six hours, dropping North
 American order volume by 99% and costing something like 6.3 million lost
 orders. Amazon disputes that AI was the primary cause of at least one of
@@ -1275,7 +1275,7 @@ change what happened. Internal documentation reportedly described the
 broader pattern going back to the previous fall as a trend of incidents
 connected to Gen-AI-assisted changes.
 
-Here's the part worth actually remembering, though. Amazon's response was to
+[click]Here's the part worth actually remembering, though. Amazon's response was to
 reinstate mandatory senior-engineer review specifically for AI-assisted
 changes. They put a human back in the loop, because an agent had been handed
 disposal authority instead of proposal authority, and nothing downstream was
@@ -1287,7 +1287,7 @@ It's a hope wearing a strategy's clothes.
 -->
 
 ---
-# S38 — bridge
+# S38 - bridge
 layout: default
 ---
 
@@ -1312,8 +1312,8 @@ verification to catch it when it's wrong.
 -->
 
 ---
-# S39 — Section 5 opener ("Section 5: How to Flatten the Curve").
-# Hidden (v8 merge, 2026-07-31) — mid-talk section dividers cut for pacing.
+# S39 - Section 5 opener ("Section 5: How to Flatten the Curve").
+# Hidden (v8 merge, 2026-07-31) - mid-talk section dividers cut for pacing.
 # Its speaker-note opener moved to the top of S40's notes below so the beat
 # survives the hide.
 #
@@ -1332,15 +1332,15 @@ are actually flattening it.
 -->
 
 ---
-# S40 — vibe then verify
+# S40 - vibe then verify
 layout: quote
 role: Generate fast. Validate harder.
 ---
 
-Build, then verify.
+(Vibe) Build, then verify.
 
 <style>
-/* Same empty-attribution gap as S30 — see that slide's note. */
+/* Same empty-attribution gap as S30 - see that slide's note. */
 :deep(.wwt-quote__attribution:empty) {
   display: none;
 }
@@ -1348,12 +1348,12 @@ Build, then verify.
 
 <!--
 There's a phrase from Sonar's research that fits the whole answer into three
-words: vibe, then verify. Generate quickly, then check harder than you're
+words: vibe (which I hate the word as it doesn't really apply - so will use build), then verify. Generate quickly, then check harder than you're
 currently checking.
 -->
 
 ---
-# S41 — self-healing tests, before/after
+# S41 - self-healing tests, before/after
 layout: comparison
 title: Self-healing test automation (vendor-reported figures)
 left:
@@ -1381,7 +1381,7 @@ not in question.
 -->
 
 ---
-# S42 — progressive delivery flow
+# S42 - progressive delivery flow
 layout: default
 ---
 
@@ -1402,7 +1402,7 @@ it into seconds.
 -->
 
 ---
-# S43 — verification layer stat
+# S43 - verification layer stat
 # title added: see S16's note on stats.vue's heading gap.
 layout: stats
 title: The cost of skipping it
@@ -1411,34 +1411,27 @@ stats:
     label: more outages, without a verification layer
   - value: "+46%"
     label: more quality impact, without a verification layer
-    caption: Non-users vs. users of a deterministic verification tool — Sonar 2026
+    caption: Non-users vs. users of a deterministic verification tool - Sonar 2026
 ---
 
 <!--
-Note: stats.vue has no body slot — any markdown/HTML placed below this
-frontmatter block is silently dropped, not just unstyled. Sources for this
-layout must go in a stat's own `caption` field (see above), never in the
-slide body.
--->
-
-<!--
-A real verification layer matters more than it sounds like it should. Sonar
+A real verification layer matters more than it sounds like it should. [click]Sonar
 found that teams without a deterministic verification tool were 80% more
-likely to report increased outage frequency tied to AI adoption, and 46%
+likely to report increased outage frequency tied to AI adoption, [click]and 46%
 more likely to say AI had hurt their code quality overall. That layer buys
 you paying the verification tax once, automatically, instead of paying it
 repeatedly in every code review.
 -->
 
 ---
-# S44 — Coinbase contrast (second cut candidate if running long)
+# S44 - Coinbase contrast (second cut candidate if running long)
 layout: default
 ---
 
 # The positive contrast
 
 Coinbase restructured its engineering interviews around directing and
-verifying AI output — not writing code from scratch.
+verifying AI output - not writing code from scratch.
 
 <!--
 Same underlying bet as everything else in this section, just made early and
@@ -1446,17 +1439,17 @@ on purpose instead of learned the hard way in a postmortem.
 -->
 
 ---
-# S45 — DORA AI Capabilities Model
+# S45 - DORA AI Capabilities Model
 # NOT `layout: process`: that layout's steps grid uses fixed equal-width
 # columns with no wrapping, and empirically overflows past the slide edge
-# at 6+ items (confirmed by rendering it — only 5 of 6 columns are visible,
+# at 6+ items (confirmed by rendering it - only 5 of 6 columns are visible,
 # regardless of how short the content is). A custom 4x2 grid on `default`
 # fits all seven without cutting any real content (7 items in an 8-cell
 # grid; last cell intentionally empty).
 layout: default
 ---
 
-# The AI Capabilities Model — DORA 2025
+# The AI Capabilities Model - DORA 2025
 
 <div class="wwt-capabilities">
 <div class="wwt-capabilities__item">
@@ -1535,7 +1528,7 @@ layout: default
 
 <!--
 RESOLVED (2026-07-31): confirmed against the DORA 2025 source PDF (report
-pp. 49-50, Figure 45 on p. 62) — the model is seven capabilities, and "healthy,
+pp. 49-50, Figure 45 on p. 62) - the model is seven capabilities, and "healthy,
 AI-accessible data" was two source capabilities collapsed into one. Split them
 back apart above (items 02/03). All seven now named; nothing padded.
 -->
@@ -1543,8 +1536,8 @@ back apart above (items 02/03). All seven now named; nothing padded.
 <!--
 Underneath all three of those tactics sits one strategic framework worth
 knowing: DORA's AI Capabilities Model, seven practices that specifically
-amplify whatever benefit AI provides. None of this is new — DORA's been
-making most of this argument for a decade — but what is new is the finding
+amplify whatever benefit AI provides. None of this is new - DORA's been
+making most of this argument for a decade - but what is new is the finding
 that these specific practices are what make AI adoption pay off. Which is
 why the answer to "how do we get ROI from AI" turns out to be identical to
 "how do we run a good engineering organization." Successful AI adoption is a
@@ -1552,7 +1545,7 @@ systems problem, not a tools problem.
 -->
 
 ---
-# S46 — MCP schematic (trimmed vs v1, fewer annotations)
+# S46 - MCP schematic (trimmed vs v1, fewer annotations)
 layout: default
 ---
 
@@ -1569,7 +1562,7 @@ If you're an architect, it's worth a weekend of reading.
 -->
 
 ---
-# S47 — systems problem, not a tools problem
+# S47 - systems problem, not a tools problem
 layout: quote
 attribution: DORA, 2026
 ---
@@ -1581,8 +1574,8 @@ Vibe, then verify. Generate fast. Check harder.
 -->
 
 ---
-# S48 — Closing opener
-# number: dropped — matches S7; a titled break, not a numbered 6th section
+# S48 - Closing opener
+# number: dropped - matches S7; a titled break, not a numbered 6th section
 # now that S12/S24/S31/S39 are hidden. See S7's note for the full rationale.
 #
 # Jeremy
@@ -1595,44 +1588,58 @@ Three concrete steps to take home.
 -->
 
 ---
-# S49 — three-step pilot playbook
+# S49 - three-step pilot playbook
 layout: process
 title: Three steps to take home
 steps:
   - title: Pick a high-velocity, non-critical surface
     detail: Not billing, not auth. Internal tools, a dev dashboard. Put the J-curve dip somewhere it can't hurt you.
   - title: Instrument the right things
-    detail: Main-branch throughput, success rate vs. a 90% benchmark, recovery time vs. 60 minutes — not lines of code. As we just saw, vanity metrics can hide the paradox at trillion-token scale.
+    detail: Main-branch throughput, success rate vs. a 90% benchmark, recovery time vs. 60 minutes - not lines of code. As we just saw, vanity metrics can hide the paradox at trillion-token scale.
   - title: Budget for the tuition, up front
     detail: Tell your CFO before the dip arrives that you expect one. Spend political capital holding the line, not explaining yourself after the fact.
 ---
 
 <!--
-First, pick a high-velocity, non-critical surface to start on. The J-curve
+[click]First, pick a high-velocity, non-critical surface to start on. The J-curve
 dip is real, so put it somewhere it can't actually hurt you.
 
-Second, instrument the right things. Not lines of code, not pull requests
-per developer — those metrics hide the paradox we've spent this whole talk
+[click]Second, instrument the right things. Not lines of code, not pull requests
+per developer - those metrics hide the paradox we've spent this whole talk
 describing, and as we just saw with tokenmaxxing, they can hide it at a
 genuinely spectacular scale.
 
-Third, budget for the tuition up front. Set the expectation early enough
+[click]Third, budget for the tuition up front. Set the expectation early enough
 that when the dip actually shows up, you're spending your political capital
 holding the line instead of explaining yourself after the fact.
-
-When the payoff does arrive, reinvest it deliberately. DORA calls the
-capacity you free up "free headcount." Don't let that get absorbed straight
-into more feature pressure — put it into quality, security, and paying down
-technical debt.
-
-The role itself is shifting too: less typing, more judgment. Less
-implementer, more systems architect and quality governor. That's a better
-job, honestly, as long as you treat the transition on purpose instead of
-letting it happen to you by accident.
 -->
 
 ---
-# S50 — code is a liability
+# S49b - reinvest the payoff on purpose, not by accident
+layout: comparison
+title: Reinvest on purpose, not by accident
+left:
+  title: By accident
+  points:
+    - "The \"free headcount\" DORA describes gets absorbed into more feature pressure"
+    - You stay the implementer
+right:
+  title: On purpose
+  points:
+    - Reinvested in quality, security, and paying down technical debt
+    - You become the systems architect and quality governor
+---
+
+<!--
+When the payoff arrives, reinvest it deliberately - DORA calls that freed-up
+capacity "free headcount," and it's yours to spend on quality, security, and
+technical debt, not more feature pressure. The role is shifting too: less
+typing, more judgment - a better job, honestly, as long as you treat the
+transition on purpose instead of letting it happen to you by accident.
+-->
+
+---
+# S50 - code is a liability
 layout: quote
 attribution: Software Engineering at Google
 role: via DORA 2026
@@ -1641,12 +1648,12 @@ role: via DORA 2026
 Code is not an asset. Code is a liability.
 
 <!--
-Code isn't an asset, it's a liability — the cost of running software
+Code isn't an asset, it's a liability - the cost of running software
 long-term dwarfs the cost of writing it in the first place.
 -->
 
 ---
-# S51 — most quotable line, biggest/cleanest treatment
+# S51 - most quotable line, biggest/cleanest treatment
 layout: quote
 dark: true
 attribution: DORA, 2026
@@ -1662,13 +1669,13 @@ We don't measure AI by the code it writes, but by the bottlenecks it clears.
 
 <!--
 That's really the whole point. The agents are clearing out the parts of the
-job nobody wanted anyway — the brittle tests, the 2am rollback, the fourth
+job nobody wanted anyway - the brittle tests, the 2am rollback, the fourth
 pass through the same YAML file. The interesting work stays exactly where it
 was. You just get more time for it.
 -->
 
 ---
-# S52 — "DON'T PANIC" bookend (closes the talk)
+# S52 - "DON'T PANIC" bookend (closes the talk)
 layout: image
 image: /images/dont-panic.png
 backgroundSize: fill
@@ -1692,6 +1699,7 @@ speakers:
       bluesky: jerdog.dev
       linkedin: /in/jeremy-meiss
       github: jerdog
+      home: https://jmeiss.me
   # - name: PJ Hagerty
   #   socials:
   #     linkedin: /in/pj-hagerty
