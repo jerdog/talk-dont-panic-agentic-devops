@@ -107,16 +107,13 @@ speakers:
       - name: DevOpsDays KC
       - name: CommunityDays KC
       - name: CDF Ambassador 2025-26
-  - name: PJ Hagerty
-    role: Tech Solution Architect
-    company: WWT
-    photo: /images/pj-hagerty.png
+  # - name: PJ Hagerty
+  #   role: Tech Solution Architect
+  #   company: WWT
+  #   photo: /images/pj-hagerty.png
 ---
 
 # Jeremy Meiss
-# PJ Hagerty
-
-(more info to come)
 
 ---
 # S5 — anchor: AI is an amplifier
@@ -1695,10 +1692,10 @@ speakers:
       bluesky: jerdog.dev
       linkedin: /in/jeremy-meiss
       github: jerdog
-  - name: PJ Hagerty
-    socials:
-      linkedin: /in/pj-hagerty
-      github: pjhagerty
+  # - name: PJ Hagerty
+  #   socials:
+  #     linkedin: /in/pj-hagerty
+  #     github: pjhagerty
 slidesUrl: https://github.com/jerdog/talk-dont-panic-agentic-devops
 ---
 
