@@ -22,7 +22,7 @@ info: |
   why the most important part of AI-driven DevOps isn't the code it generates,
   but the bottlenecks it actually clears.
 presenterName: Jeremy Meiss
-presenterRole: Tech Solution Architect
+presenterRole:
 layout: cover
 duration: 45min
 transition: slide-left
@@ -268,23 +268,23 @@ layout: default
 # Three reports, three conclusions
 
 <div class="wwt-threeviews">
-<v-clicks>
-<div class="wwt-threeviews__card">
-<h3>Google Cloud</h3>
-<p class="wwt-threeviews__tag">Optimistic</p>
-<p>78% of executives have seen ROI on at least one use case.</p>
-</div>
-<div class="wwt-threeviews__card">
-<h3>Stanford AI Index</h3>
-<p class="wwt-threeviews__tag">Neutral</p>
-<p>Adoption is everywhere. Real structural change is rare.</p>
-</div>
-<div class="wwt-threeviews__card">
-<h3>MIT NANDA</h3>
-<p class="wwt-threeviews__tag">Pessimistic</p>
-<p>The shadow AI economy - official tools underdeliver, people route around them.</p>
-</div>
-</v-clicks>
+  <v-clicks>
+    <div class="wwt-threeviews__card">
+      <h3>Google Cloud</h3>
+      <p class="wwt-threeviews__tag">Optimistic</p>
+      <p>78% of executives have seen ROI on at least one use case.</p>
+    </div>
+    <div class="wwt-threeviews__card">
+      <h3>Stanford AI Index</h3>
+      <p class="wwt-threeviews__tag">Neutral</p>
+      <p>Adoption is everywhere. Real structural change is rare.</p>
+    </div>
+    <div class="wwt-threeviews__card">
+      <h3>MIT NANDA</h3>
+      <p class="wwt-threeviews__tag">Pessimistic</p>
+      <p>The shadow AI economy - official tools underdeliver, people route around them.</p>
+    </div>
+  </v-clicks>
 </div>
 
 <style>
@@ -412,11 +412,13 @@ None of what matters here rests on DORA alone. Atlassian ran its own workforce r
 # reader "jump by heading" navigation (WCAG 1.3.1/2.4.6).
 layout: stats
 title: Not a survey
-stats:
-  - value: "28,000,000"
-    label: CI workflows analyzed
-    caption: CircleCI 2026 - not a survey, actual pipeline data
 ---
+
+<Stat
+  value="28,000,000"
+  label="CI workflows analyzed"
+  caption="CircleCI 2026 - not a survey, actual pipeline data"
+/>
 
 <!--
 CircleCI didn't ask anyone what they believed. They pulled 28 million actual CI workflow runs from thousands of real teams and looked at what happened.
@@ -476,11 +478,13 @@ The bottleneck moved. [pause]
 # title added: see S16's note on stats.vue's heading gap.
 layout: stats
 title: Slower at fixing what breaks
-stats:
-  - value: "72 min"
-    label: median time to recover
-    caption: "+13% YoY · feature branches: 80 min (+25%) - CircleCI 2026"
 ---
+
+<Stat
+  value="72 min"
+  label="Median time to recover"
+  caption="+13% YoY · feature branches: 80 min (+25%) - CircleCI 2026"
+/>
 
 <!--
 Median time to recover from a failed build [click]is now 72 minutes, up 13% from last year. On feature branches it's closer to 80 minutes, up 25%. We're getting slower at fixing what breaks, at exactly the moment we're breaking more of it.
@@ -1157,41 +1161,36 @@ layout: default
 # The AI Capabilities Model - DORA 2025
 
 <div class="wwt-capabilities">
-<div class="wwt-capabilities__item">
-<span class="wwt-capabilities__num">01</span>
-<h3>Clear AI stance</h3>
-<p>A stated, communicated position on AI use.</p>
-</div>
-<div class="wwt-capabilities__item">
-<span class="wwt-capabilities__num">02</span>
-<h3>Healthy data ecosystems</h3>
-<p>Data that's well-governed at the source.</p>
-</div>
-<div class="wwt-capabilities__item">
-<span class="wwt-capabilities__num">03</span>
-<h3>AI-accessible data</h3>
-<p>Internal data AI tooling can actually reach.</p>
-</div>
-<div class="wwt-capabilities__item">
-<span class="wwt-capabilities__num">04</span>
-<h3>Version control discipline</h3>
-<p>Strong practices, not aspirational ones.</p>
-</div>
-<div class="wwt-capabilities__item">
-<span class="wwt-capabilities__num">05</span>
-<h3>Small batches</h3>
-<p>Working in small, reviewable increments.</p>
-</div>
-<div class="wwt-capabilities__item">
-<span class="wwt-capabilities__num">06</span>
-<h3>User-centric focus</h3>
-<p>Genuinely centered on the user, not the roadmap.</p>
-</div>
-<div class="wwt-capabilities__item">
-<span class="wwt-capabilities__num">07</span>
-<h3>Quality internal platforms</h3>
-<p>Platforms worth building on.</p>
-</div>
+  <div class="wwt-capabilities__item">
+    <span class="wwt-capabilities__num">01</span>
+    <h3>Clear AI stance</h3>
+    <p>A stated, communicated position on AI use.</p>
+  </div>
+  <div class="wwt-capabilities__item">
+    <span class="wwt-capabilities__num">02</span>
+    <h3>Healthy data ecosystems</h3>
+    <p>Data that's well-governed at the source.</p>
+  </div>
+  <div class="wwt-capabilities__item">
+    <span class="wwt-capabilities__num">03</span>
+    <h3>AI-accessible data</h3>
+    <p>Internal data AI tooling can actually reach.</p>
+  </div>
+  <div class="wwt-capabilities__item">
+    <span class="wwt-capabilities__num">05</span>
+    <h3>Small batches</h3>
+    <p>Working in small, reviewable increments.</p>
+  </div>
+  <div class="wwt-capabilities__item">
+    <span class="wwt-capabilities__num">06</span>
+    <h3>User-centric focus</h3>
+    <p>Genuinely centered on the user, not the roadmap.</p>
+  </div>
+  <div class="wwt-capabilities__item">
+    <span class="wwt-capabilities__num">07</span>
+    <h3>Quality internal platforms</h3>
+    <p>Platforms worth building on.</p>
+  </div>
 </div>
 
 <style>
@@ -1373,7 +1372,7 @@ speakers:
       bluesky: jerdog.dev
       linkedin: /in/jeremy-meiss
       github: jerdog
-      home: https://jmeiss.me
+      website: jmeiss.me
   # - name: PJ Hagerty
   #   socials:
   #     linkedin: /in/pj-hagerty
