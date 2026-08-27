@@ -1366,6 +1366,7 @@ The answer is: go clear the bottlenecks AI can't.
 
 ---
 layout: thank-you
+title: Thank you
 speakers:
   - name: Jeremy Meiss
     socials:
