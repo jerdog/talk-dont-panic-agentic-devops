@@ -1,0 +1,34 @@
+{
+  // Slidev repeats a `---`-delimited YAML frontmatter block on every slide,
+  // and this deck uses `#`-prefixed comment lines *inside* that frontmatter
+  // as internal authoring notes (numbering, hide/show rationale, etc).
+  // Generic markdownlint only recognizes a single frontmatter block at the
+  // very top of a file - everywhere else it reads `---` as a thematic
+  // break/setext underline and `# note` lines as real ATX headings. That
+  // misparse cascades into false positives for every heading- and
+  // list-related rule below, plus the inline HTML/long lines that are just
+  // how Slidev components and speaker notes are written. None of this
+  // reflects an authoring mistake in slides.md - it's a rule/format mismatch,
+  // scoped to this file only so other Markdown (README.md, import/*.md)
+  // keeps normal linting.
+  "overrides": [
+    {
+      "filter": ["slides.md"],
+      "combine": "merge",
+      "config": {
+        "MD003": false, // heading-style: slide-separator "---" misread as a setext underline
+        "MD007": false, // ul-indent: frontmatter YAML sequences (stats:, bio, playbook steps) misread as md lists
+        "MD013": false, // line-length: long single-line speaker notes/component props are normal here
+        "MD019": false, // no-multiple-space-atx: indented "#"-note lines misread as headings
+        "MD022": false, // blanks-around-headings: each slide's H1 sits right after its frontmatter fence by design
+        "MD023": false, // heading-start-left: same indented "#"-note lines as MD019
+        "MD024": false, // no-duplicate-heading: independent slides intentionally reuse titles (e.g. section dividers)
+        "MD025": false, // single-title/single-h1: every slide is its own top-level heading by design
+        "MD026": false, // no-trailing-punctuation: "#"-prefixed authoring notes read as headings, not real titles
+        "MD032": false, // blanks-around-lists: same frontmatter-YAML-as-list misread as MD007
+        "MD033": false, // no-inline-html: Slidev/Vue components and layout HTML are the format
+        "MD034": false  // no-bare-urls: a frontmatter `slidesUrl:` value misread as bare-URL prose
+      }
+    }
+  ]
+}
