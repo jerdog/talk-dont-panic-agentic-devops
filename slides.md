@@ -27,10 +27,17 @@ presenter: true
 titleTemplate: '%s - Slidev'
 exportFilename: "slides_dont-panic-hitchhikers-guide-agentic-devops"
 layout: cover
+drawings:
+  persist: false
 duration: 45min
 transition: slide-left
+fonts:
+  sans: Inter
+  serif: Lato
+  mono: Fira Code
 comark: true
 colorSchema: dark
+wakeLock: true
 ---
 
 <!--
