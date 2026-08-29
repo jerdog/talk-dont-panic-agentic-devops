@@ -412,13 +412,11 @@ None of what matters here rests on DORA alone. Atlassian ran its own workforce r
 # reader "jump by heading" navigation (WCAG 1.3.1/2.4.6).
 layout: stats
 title: Not a survey
+stats:
+  - value: "28,000,000"
+    label: CI workflows analyzed
+    caption: CircleCI 2026 - not a survey, actual pipeline data
 ---
-
-<Stat
-  value="28,000,000"
-  label="CI workflows analyzed"
-  caption="CircleCI 2026 - not a survey, actual pipeline data"
-/>
 
 <!--
 CircleCI didn't ask anyone what they believed. They pulled 28 million actual CI workflow runs from thousands of real teams and looked at what happened.
@@ -478,13 +476,11 @@ The bottleneck moved. [pause]
 # title added: see S16's note on stats.vue's heading gap.
 layout: stats
 title: Slower at fixing what breaks
+stats:
+  - value: "72 min"
+    label: Median time to recover
+    caption: "+13% YoY · feature branches: 80 min (+25%) - CircleCI 2026"
 ---
-
-<Stat
-  value="72 min"
-  label="Median time to recover"
-  caption="+13% YoY · feature branches: 80 min (+25%) - CircleCI 2026"
-/>
 
 <!--
 Median time to recover from a failed build [click]is now 72 minutes, up 13% from last year. On feature branches it's closer to 80 minutes, up 25%. We're getting slower at fixing what breaks, at exactly the moment we're breaking more of it.
