@@ -22,11 +22,22 @@ info: |
   why the most important part of AI-driven DevOps isn't the code it generates,
   but the bottlenecks it actually clears.
 presenterName: Jeremy Meiss
-presenterRole:
+presenterRole: Tech Solution Architect, WWT
+presenter: true
+titleTemplate: '%s - Slidev'
+exportFilename: "slides_dont-panic-hitchhikers-guide-agentic-devops"
 layout: cover
+drawings:
+  persist: false
 duration: 45min
 transition: slide-left
+fonts:
+  sans: Inter
+  serif: Lato
+  mono: Fira Code
+comark: true
 colorSchema: dark
+wakeLock: true
 ---
 
 <!--
