@@ -23,9 +23,13 @@ info: |
   but the bottlenecks it actually clears.
 presenterName: Jeremy Meiss
 presenterRole:
+presenter: true
+titleTemplate: '%s - Slidev'
+exportFilename: "slides_dont-panic-hitchhikers-guide-agentic-devops"
 layout: cover
 duration: 45min
 transition: slide-left
+comark: true
 colorSchema: dark
 ---
 
