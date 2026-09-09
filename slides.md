@@ -22,7 +22,7 @@ info: |
   why the most important part of AI-driven DevOps isn't the code it generates,
   but the bottlenecks it actually clears.
 presenterName: Jeremy Meiss
-presenterRole: Tech Solution Architect, WWT
+presenterRole: Technical Solution Architect, WWT
 presenter: true
 titleTemplate: '%s - Slidev'
 exportFilename: "slides_dont-panic-hitchhikers-guide-agentic-devops"
@@ -41,7 +41,18 @@ wakeLock: true
 ---
 
 <!--
-A show of hands: who recognizes where the title of this talk is from? For those who don't, it's what's printed on the cover of the Hitchhiker's Guide to the Galaxy from the Douglas Adams book of the same name. He describes the book as the most important piece of advice ever offered to a being trying to navigate a chaotic universe. If that doesn't describe the current state of Software Development, much less our world today, I don't know what else does.
+A show of hands: who recognizes where this title comes from? For those who don't, it's what's printed on the cover of the Hitchhiker's Guide to the Galaxy
+-->
+
+---
+layout: image
+image: /images/H2G2_UK_front_cover.jpg
+title: "Hitchhiker's Guide to the Galaxy"
+backgroundSize: fit
+---
+
+<!--
+from the Douglas Adams book of the same name. He describes the book as the most important piece of advice ever offered to a being trying to navigate a chaotic universe. If that doesn't describe the current state of Software Development, much less our world today, I don't know what else does.
 -->
 
 ---
@@ -93,16 +104,14 @@ speakers:
     company: WWT
     photo: /images/jeremy-meiss.png
     orgs:
-      - name: DevOpsDays KC
-      - name: CommunityDays KC
+      - name: DevOpsDays KC organizer
+      - name: CommunityDays KC organizer
       - name: CDF Ambassador 2025-26
   # - name: PJ Hagerty
   #   role: Tech Solution Architect
   #   company: WWT
   #   photo: /images/pj-hagerty.png
 ---
-
-# Jeremy Meiss
 
 ---
 # S5 - anchor: AI is an amplifier
@@ -146,17 +155,24 @@ layoutClass: wwt-header-center wwt-cols-center
 
 ::left::
 
-![dont-panic](/images/dont-panic.png)
+<!-- Size knob: swap the `w-` token. `mx-auto` centers it once it's under full width.
+     Fractions: w-1/2 w-3/5 w-2/3 w-4/5 w-full · Fixed: w-60 w-80 (rem-based)
+     To go LARGER than the column, add `max-w-none` - the theme's
+     `.wwt-cols-center .col-left img { max-width: 100% }` otherwise caps it silently. -->
+<img src="/images/dont-panic.png" alt="dont-panic" class="w-4/5  mx-auto" />
 
 ::right::
 
 1. Why some teams are pulling ahead while most aren't
-2. What the actual bottleneck is now - it has moved, and it has a name
-3. A set of steps you can bring to your VP on Monday that fit in a Jira ticket rather than a strategy deck
+2. What the actual bottleneck is now
+3. A set of steps you can bring to your VP
 
 <style>
-  ol, ul {
+  ol, ul, il {
     list-style-type: decimal;
+  }
+  .slidev-layout li {
+    font-size: 1.5rem;
   }
 </style>
 
@@ -242,14 +258,14 @@ Here's the part I think is most useful, and it comes from DORA's 2026 ROI report
 layout: default
 ---
 
-# The dip has a name
+# The J-Curve Dip
 
 <JCurve labeled />
 
 <!--
-Serious AI adoption produces a dip before it produces growth, and three things cause it. A learning curve, since your team has to figure out new workflows. What DORA calls the verification tax, meaning the time spent checking whether AI output can actually be trusted. And pipeline adaptation, since your downstream systems - testing, review, deployment - have to scale to handle more volume than they were built for.
+Serious AI adoption produces a dip before producing growth, and three things cause it. A learning curve, since your team has to figure out new workflows. What DORA calls the verification tax, meaning the time spent checking whether AI output can actually be trusted. And pipeline adaptation, since your downstream systems - testing, review, deployment - have to scale to handle more volume than they were built for.
 
-The trap, and DORA is explicit about this, is that leadership sees the dip and assumes the initiative is failing, so they pull funding right before the payoff would have shown up. The dip isn't the failure. Paying for it is the cost of getting anywhere. Pulling out early is the actual mistake.
+The trap, and DORA is explicit about this, is leadership sees the dip and assumes the initiative is failing, so they pull funding right before the payoff would have shown up. The dip isn't the failure. Paying for it is the cost of getting anywhere. Pulling out early is the actual mistake.
 
 Everything else in this talk lives somewhere inside that dip. So let's look at what it actually looks like.
 -->
@@ -327,9 +343,9 @@ layout: default
 </style>
 
 <!--
-There isn't a consensus yet on what AI adoption is actually returning. Three sources, three different conclusions. [click]Google Cloud's 2025 report on AI ROI says 78% of executives have seen a return on at least one use case - we'll acll that the optimistic read. [click]Stanford's AI Index says adoption is everywhere but real structural change is rare, and most companies land somewhere flat - this is the neutral read. [click]We also have MIT's NANDA project describes what they call the shadow AI economy: official tools underdelivering while employees quietly route around them using unauthorized consumer apps - the pessimistic read.
+There isn't a consensus yet on what AI adoption is actually returning. [click]Google Cloud's 2025 report on AI ROI says 78% of executives have seen a return on at least one use case - we'll call that the optimistic read. [click]Stanford's AI Index says adoption is everywhere but real structural change is rare, and most companies land somewhere flat - this is the neutral read. [click]We also have MIT's NANDA project describes what they call the shadow AI economy: official tools underdelivering while employees quietly route around them using unauthorized consumer apps - the pessimistic read.
 
-All three are true at once, which tells you the interesting question isn't whether AI works. It's for whom, and under what conditions. It also highlights the importance of who you are asking. On one end of the spectrum, you have executives who aren't actively using the tools saying they are amazing. On the other end, developers who are expected to use these tools daily are reporting they aren't as effective as advertised.
+All three are true at once, which tells you that it isn't whether AI works. It's for whom, and under what conditions. It also highlights the importance of who you are asking. On one end of the spectrum, you have executives who aren't actively using the tools saying they are amazing. On the other end, developers who are expected to use these tools daily are reporting they aren't as effective as advertised.
 -->
 
 ---
@@ -341,10 +357,9 @@ All three are true at once, which tells you the interesting question isn't wheth
 layout: default
 ---
 
-# Worth naming honestly
+# DORA (DevOps Research and Assessment)
 
-DORA's 2026 ROI report has taken real criticism this year - some call it
-more brochure than research.
+DORA's 2026 AI ROI report under fire.
 
 <p class="wwt-caveat__note">
 Separately: Stride Research has <strong>pre-registered</strong> a study
@@ -361,13 +376,11 @@ yet.
 </style>
 
 <!--
-Before I lean further on DORA's numbers, I want to flag something, because I'd rather you hear it now than lose trust in the rest of this talk later.
+Before I lean further on DORA's numbers, DORA has come under fire this last year for their AI ROI report. Some called it
 
-One detailed teardown called it more brochure than research, pointing out that the J-curve model is heavy on narrative and light on new primary data, and noting that DORA's research partner has openly said they wanted to reframe what they'd previously called an anomaly in their own 2024 numbers.
+One teardown called it more "brochure than research", pointing out that the J-curve model is heavy on narrative and light on new primary data, and noted that their research partner wanted to reframe what they'd previously called an anomaly in their own 2024 numbers.
 
-Separately, a research group called Stride has pre-registered a study specifically testing whether the correlation between AI adoption and elite performance survives controls for company size and existing engineering maturity - in other words, whether good teams are just good at everything, AI included, rather than AI being what makes them good. Worth being precise about where that actually stands: the methodology is public, the hypothesis is locked in, and the results are expected later this year. We don't have the answer yet. Neither does anyone else currently claiming to.
-
-I think that's a fair challenge, and I'm not going to pretend it isn't out there.
+Separately, Stride, a research group, has pre-registered a study specifically testing whether the correlation between AI adoption and elite performance survives controls for company size and existing engineering maturity - in other words, whether good teams are just good at everything, AI included, rather than AI being what makes them good.
 -->
 
 ---
@@ -413,7 +426,7 @@ individual output speeds up, then backs up at review and approval.
 </style>
 
 <!--
-None of what matters here rests on DORA alone. Atlassian ran its own workforce research this year, independently, and landed on something they're calling an AI efficiency paradox: individual output speeds up, then piles up at review and approval, and most of the gain disappears before it ever reaches the system level. Different company, different survey, no connection to DORA at all, and it's the same mechanism this talk keeps coming back to. Watch what happens when we check the story again against people who weren't running a survey in the first place.
+But DORA isn't alone in their research: Atlassian ran its own independent workforce research, and landed on something they're calling an AI efficiency paradox: individual output speeds up, then piles up at review and approval, and most of the gain disappears before it ever reaches the system level. Will actual data, instead of just a survey, return the same results?
 -->
 
 ---
@@ -423,13 +436,11 @@ None of what matters here rests on DORA alone. Atlassian ran its own workforce r
 # reader "jump by heading" navigation (WCAG 1.3.1/2.4.6).
 layout: stats
 title: Not a survey
+stats:
+  - value: "28,000,000"
+    label: CI workflows analyzed
+    caption: CircleCI 2026 - not a survey, actual pipeline data
 ---
-
-<Stat
-  value="28,000,000"
-  label="CI workflows analyzed"
-  caption="CircleCI 2026 - not a survey, actual pipeline data"
-/>
 
 <!--
 CircleCI didn't ask anyone what they believed. They pulled 28 million actual CI workflow runs from thousands of real teams and looked at what happened.
@@ -477,9 +488,9 @@ layout: default
 />
 
 <!--
-Here's the number that made me stop and reread the chart. CircleCI split this by branch type. On feature branches - where people prototype and experiment - throughput rose for almost everyone, including a 15% bump for the median team and a 50% bump for the top decile. But on the main branch, the branch that actually ships to customers, the median team's throughput fell 7%. The top decile was flat. Only the top 5% managed to grow on both, gaining 26% on main branch as well.
+CircleCI split this by branch type. On feature branches - where people prototype and experiment - throughput rose for almost everyone, including a 15% bump for the median team and a 50% bump for the top %. But on the main, production branch, the median team's throughput fell 7%. The top % was flat. Only the top 5% managed to grow on both, gaining 26% on main branch as well.
 
-Sit with that for a second. Developers across the industry are writing more code than they ever have. Almost none of it is reaching production. Activity is up. Delivery isn't. The old bottleneck was how fast someone could type. That bottleneck is gone. What's replaced it is integration, review, and recovery - the verification tax, showing up in raw pipeline data with no survey involved anywhere.
+Devs across the industry are writing more code than they ever have, with basically none of it reaching production. Activity is up. Delivery isn't. The old bottleneck was how fast someone could type. That bottleneck is gone. What's replaced it is integration, review, and recovery - the verification tax, showing up in raw pipeline data with no survey involved anywhere.
 
 The bottleneck moved. [pause]
 -->
@@ -489,13 +500,11 @@ The bottleneck moved. [pause]
 # title added: see S16's note on stats.vue's heading gap.
 layout: stats
 title: Slower at fixing what breaks
+stats:
+  - value: "72 min"
+    label: Median time to recover
+    caption: "+13% YoY · feature branches: 80 min (+25%) - CircleCI 2026"
 ---
-
-<Stat
-  value="72 min"
-  label="Median time to recover"
-  caption="+13% YoY · feature branches: 80 min (+25%) - CircleCI 2026"
-/>
 
 <!--
 Median time to recover from a failed build [click]is now 72 minutes, up 13% from last year. On feature branches it's closer to 80 minutes, up 25%. We're getting slower at fixing what breaks, at exactly the moment we're breaking more of it.
@@ -519,13 +528,13 @@ stats:
 <!--
 And main-branch success rate [click]had dropped to 70.8% as of last September, the lowest it had been in five years, against an industry benchmark of 90%. Roughly three in ten attempts to merge into production code were failing outright.
 
-[click] A follow-up check-in CircleCI published just a few weeks ago, using fresher data from this past March, shows that number climbing back to 76.7%. Genuinely encouraging. Still nowhere near the mid-80s teams were hitting back in 2023 and 2024, and still well short of that 90% benchmark.
+[click] A follow-up check-in CircleCI published recently, using fresher data from this past March, shows that number climbing back to 76.7%. Genuinely encouraging. Still nowhere near the mid-80s teams were hitting back in 2023 and 2024, and still well short of that 90% benchmark.
 -->
 
 ---
 # S20b - Merge Efficiency Ratio (v8: NEW)
 layout: stats
-title: "Merge Efficiency Ratio - validation cycles per merged change"
+title: "Merge Efficiency Ratio (MER) - validation cycles per merged change"
 stats:
   - value: "3.9"
     label: Median team
@@ -599,7 +608,7 @@ Do the arithmetic on that and it gets uncomfortable fast. A team pushing five ch
 ---
 # S21b - dollar-cost framing (v8: NEW). Live alternate to S21 - not both-and.
 layout: stats
-title: "50-developer team, ~3,000 changes a month"
+title: "50 dev team, ~3k changes a month"
 stats:
   - value: "$900K"
     label: a year at risk
@@ -620,7 +629,7 @@ stats:
 </style>
 
 <!--
-If FTEs feel a little abstract, here's the same story in dollars instead. [click]That same recent CircleCI report modeled a fifty-developer team shipping about three thousand changes a month at a fairly ordinary MER. Run that team through unoptimized, agent-heavy workflows with slow CI feedback and the friction costs something like nine hundred thousand dollars a year, a lot of it from agents sitting idle waiting for a green light long enough that their context cache expires and they have to start over from scratch. [click]Move the routine checks earlier, into the loop where the code actually gets written instead of after it's already been pushed, and that same team can claw back seven hundred thousand dollars or more of it. FTEs or dollars, take whichever framing lands better with whoever controls your budget.
+If FTEs feel a little abstract, here's the same story in dollars instead. That same CircleCI report modeled a fifty-dev team shipping about 3,000 changes a month at a fairly ordinary MER. Run that team through unoptimized, agent-heavy workflows with slow CI feedback and [click]the friction costs something like nine hundred thousand dollars a year, a lot of it from agents sitting idle waiting for a green light long enough that their context cache expires and they have to start over from scratch. [click]Move the routine checks earlier, into the loop where the code actually gets written instead of after it's already been pushed, and that same team can claw back seven hundred thousand dollars or more of it. FTEs or dollars, take whichever framing lands better with whoever controls your budget.
 -->
 
 ---
@@ -734,9 +743,9 @@ stats:
 ---
 
 <!--
-Quick detour into the Babel fish. In the Hitchhiker's Guide, it's a small yellow creature you stick in your ear that translates any language into your own, instantly. Genuinely useful. Also, memorably, used in the book as a proof against the existence of God - the argument being that something this convenient couldn't have arisen naturally, so its existence disproves the faith required to believe in a creator. It's absurd and also kind of airtight, which is the bar I'm setting for what follows.
+Who's familiar with the Babel fish? In the Hitchhiker's Guide, it's a small yellow creature you stick in your ear that translates any language into your own, instantly. Genuinely useful.
 
-Why does verification cost so much? [click]Sonar asked 1,149 developers and found that 96% don't fully trust that AI-generated code is functionally correct. [click]And yet only 48% of them always check it before committing. Ninety-six percent distrust, forty-eight percent verification - that gap is roughly where your production incidents live.
+Why does verification cost so much? [click]Sonar asked 1,149 developers and found that 96% don't fully trust that AI-generated code is functionally correct. [click]And yet only 48% of them always check it before committing. 96% percent distrust, 48% percent verification - that gap is roughly where your production incidents live.
 -->
 
 ---
@@ -749,7 +758,7 @@ role: Sonar, 2026
 Code that looks correct but isn't reliable.
 
 <!--
-Sixty-one percent of developers put a specific name to the failure mode: code that looks correct but isn't reliable. This is a different kind of bug than what a junior developer typically produces. Junior mistakes tend to be loud - a stack trace, a compile error. AI mistakes tend to be quiet. The code compiles. The tests pass. The logic reads fine on a first pass. Then three weeks later it does the wrong thing under load.
+Sixty-one percent of developers put a specific name to the failure mode: code that looks correct but isn't reliable. This is a different kind of bug than what a junior developer typically produces. **Junior mistakes tend to be loud - a stack trace, a compile error. AI mistakes tend to be quiet.** The code compiles. The tests pass. The logic reads fine on a first pass. Then three weeks later it does the wrong thing under load.
 -->
 
 ---
@@ -817,7 +826,7 @@ no longer a clean control group left to recruit.
 <!--
 People had become dependent enough on the tool that you literally couldn't recruit a control group to measure life without it. I'm not going to hand you a corrected percentage, because I don't think anyone honest can give you one yet. The picture got muddier, not clearer. Notice what that failure actually is: it's the trust gap and the verification tax showing up inside the methodology of the people trying to study them.
 
-The mental model I'd take from all of this is the drafting mindset. AI proposes. A human disposes.
+The mental model I'd take from all of this is the drafting mindset....
 -->
 
 ---
@@ -871,7 +880,7 @@ AI proposes. Humans dispose.
 </style>
 
 <!--
-Every piece of AI output is a first draft from a junior engineer - not because the model is unintelligent, sometimes it's quite good, but because you're the one accountable for what ships, and the model will not be in the room for the post-incident review.
+AI proposes. A human disposes. Every piece of AI output is a first draft from a junior engineer - not because the model is unintelligent, sometimes it's quite good, but because you're the one accountable for what ships, and the model will not be in the room for the post-incident review.
 -->
 
 ---
@@ -970,8 +979,6 @@ right:
 
 <!--
 The experience gap. Junior developers report a 40% productivity gain from AI, compared to 32% for seniors, but juniors also report the "looks correct but isn't reliable" failure mode at 66%, against 48% for seniors. The takeaway isn't that junior developers should use AI less. It's that senior review needs to be sitting on top of AI-generated code specifically.
-
-[pause] Here's the line I want you to actually write down.
 -->
 
 ---
@@ -1038,7 +1045,7 @@ This is Amazon. If it can happen to a company with that much operational sophist
 layout: default
 ---
 
-<div class="wwt-bridge">Amplifier works both directions.</div>
+<div class="wwt-bridge">AI as an Amplifier works both directions.</div>
 
 <style>
 .wwt-bridge {
@@ -1095,7 +1102,7 @@ There's a phrase from Sonar's research that fits the whole answer into three wor
 ---
 # S41 - self-healing tests, before/after
 layout: comparison
-title: Self-healing test automation (vendor-reported figures)
+title: Self-healing test automation
 left:
   title: Before
   points:
@@ -1110,6 +1117,8 @@ right:
     - Payback in ~3 months
 ---
 
+## _(vendor-reported figures)_
+
 <!--
 Self-healing test automation addresses the first place the verification tax usually bites: AI writes more code, the test suite breaks more often trying to keep up, teams start quietly disabling flaky tests, and coverage rots from there. Self-healing tests use dynamic baselining and predictive change detection to recover automatically instead of failing loudly. Treat any specific vendor claim with the usual skepticism, but the direction here is not in question.
 -->
@@ -1123,8 +1132,24 @@ layout: default
 
 <ProgressiveDelivery />
 
+> _"the knack of flying lies in learning how to throw yourself at the ground and miss."_ — Douglas Adams, The Hitchhiker's Guide to the Galaxy
+
+<style>
+  .slidev-layout h1 {
+    margin-bottom: 0px;
+    margin-top: -1em;
+}
+.wwt-progdelivery__flow {
+    gap: var(--wwt-space-2);
+    flex: 2;
+}
+.wwt-progdelivery__node[data-v-704eebc2] {
+    padding: var(--wwt-space-2) var(--wwt-space-4);
+}
+</style>
+
 <!--
-Progressive delivery with automatic rollback is the cleanest real-world example of "over the loop" I can offer you, and there's a line from the Guide that describes it better than I could: the knack of flying, Adams writes, lies in learning how to throw yourself at the ground and miss. That's more or less what this pattern does on purpose. Push a change to a small slice of traffic, let real-time telemetry make the call, and if error budgets or p99 latency get blown, roll back automatically before anyone gets paged. Remember that 72-minute median recovery time from earlier? This turns it into seconds.
+Progressive delivery with automatic rollback is the cleanest real-world example of "over the loop" - and Adams has a great line from the Guide: "the knack of flying lies in learning how to throw yourself at the ground and miss." That's more or less what this pattern does on purpose. Push a change to a small slice of traffic, let real-time telemetry make the call, and if error budgets or p99 latency get blown, roll back automatically before anyone gets paged. Remember that 72-minute median recovery time from earlier? This turns it into seconds.
 -->
 
 ---
@@ -1145,27 +1170,13 @@ A real verification layer matters more than it sounds like it should. [click]Son
 -->
 
 ---
-# S44 - Coinbase contrast (second cut candidate if running long)
-layout: default
----
-
-# The positive contrast
-
-Coinbase restructured its engineering interviews around directing and
-verifying AI output - not writing code from scratch.
-
-<!--
-Same underlying bet as everything else in this section, just made early and on purpose instead of learned the hard way in a postmortem.
--->
-
----
 # S45 - DORA AI Capabilities Model
 # NOT `layout: process`: that layout's steps grid uses fixed equal-width
 # columns with no wrapping, and empirically overflows past the slide edge
 # at 6+ items (confirmed by rendering it - only 5 of 6 columns are visible,
-# regardless of how short the content is). A custom 4x2 grid on `default`
-# fits all seven without cutting any real content (7 items in an 8-cell
-# grid; last cell intentionally empty).
+# regardless of how short the content is). A custom grid on `default`,
+# capped at 3 columns per row with auto rows, fits all items without
+# cutting any real content.
 layout: default
 ---
 
@@ -1188,17 +1199,17 @@ layout: default
     <p>Internal data AI tooling can actually reach.</p>
   </div>
   <div class="wwt-capabilities__item">
-    <span class="wwt-capabilities__num">05</span>
+    <span class="wwt-capabilities__num">04</span>
     <h3>Small batches</h3>
     <p>Working in small, reviewable increments.</p>
   </div>
   <div class="wwt-capabilities__item">
-    <span class="wwt-capabilities__num">06</span>
+    <span class="wwt-capabilities__num">05</span>
     <h3>User-centric focus</h3>
     <p>Genuinely centered on the user, not the roadmap.</p>
   </div>
   <div class="wwt-capabilities__item">
-    <span class="wwt-capabilities__num">07</span>
+    <span class="wwt-capabilities__num">06</span>
     <h3>Quality internal platforms</h3>
     <p>Platforms worth building on.</p>
   </div>
@@ -1210,8 +1221,8 @@ layout: default
   min-height: 0;
   overflow: hidden;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 1fr;
   gap: 0.75rem 1.5rem;
 }
 .wwt-capabilities__item {
@@ -1240,10 +1251,6 @@ layout: default
   margin: 0;
 }
 </style>
-
-<!--
-RESOLVED (2026-07-31): confirmed against the DORA 2025 source PDF (report pp. 49-50, Figure 45 on p. 62) - the model is seven capabilities, and "healthy, AI-accessible data" was two source capabilities collapsed into one. Split them back apart above (items 02/03). All seven now named; nothing padded.
--->
 
 <!--
 Underneath all three of those tactics sits one strategic framework worth knowing: DORA's AI Capabilities Model, seven practices that specifically amplify whatever benefit AI provides. None of this is new - DORA's been making most of this argument for a decade - but what is new is the finding that these specific practices are what make AI adoption pay off. Which is why the answer to "how do we get ROI from AI" turns out to be identical to "how do we run a good engineering organization." Successful AI adoption is a systems problem, not a tools problem.
@@ -1365,14 +1372,45 @@ That's really the whole point. The agents are clearing out the parts of the job 
 # S52 - "DON'T PANIC" bookend (closes the talk)
 layout: image
 image: /images/dont-panic.png
-backgroundSize: fill
+backgroundSize: 50%
 hideBadge: true
 ---
 
-<!--
-Don't panic. We were told that much, in large friendly letters, by a much wiser book than this one. Build the verification layer first. Budget for the dip before it shows up. Vibe, then verify. And when you get home, tell your team the answer isn't 42.
+<v-clicks>
 
-The answer is: go clear the bottlenecks AI can't.
+## Go clear the bottlenecks AI can't.
+
+</v-clicks>
+
+<style>
+/* Pushes the heading to the bottom of the slide, over the full-bleed
+   background image, and centers it horizontally. `.slidev-layout` (this
+   layout's root) is a plain block div with padding (px-14 py-10) and no
+   positioning of its own, so the heading renders top-left by default -
+   flex + justify-content moves it down without touching the image or
+   its background-size, and align-items centers the heading box itself.
+   The theme sets `.slidev-layout * { text-align: left }` brand-wide
+   (see style.css), so the text-align override needs !important to win
+   regardless of stylesheet order. */
+.slidev-layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+.slidev-layout h2 {
+  text-align: center !important;
+}
+</style>
+
+<!--
+Don't panic.
+Build the verification layer first.
+Budget for the dip before it shows up.
+Build, then verify.
+And when you get home, tell your team the answer is of course 42.
+
+[click]Ok, so maybe not.... The answer is: go clear the bottlenecks AI can't.
 -->
 
 ---
@@ -1391,8 +1429,6 @@ speakers:
   #     github: pjhagerty
 slidesUrl: https://github.com/jerdog/talk-dont-panic-agentic-devops
 ---
-
-So long, and thanks for all the boilerplate.
 
 <style>
 :deep(.wwt-end__signoff) {
