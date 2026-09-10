@@ -129,7 +129,7 @@ role: n = 5,000
 AI is an amplifier.
 
 <!--
-DORA is a group that's been studying engineering performance for over a decade - they surveyed 5,000 technology professionals last year and ran more than a hundred hours of qualitative interviews. Their conclusion boiled down to one sentence worth writing on your hand: AI is an amplifier. It doesn't fix anything. It takes whatever's already true about your organization and makes more of it. High-performing teams get faster. Struggling teams get worse, faster. DORA also calls it a mirror, which I think is the same idea from a different angle - it shows you who you already were.
+DORA is a group that's been studying engineering performance for over a decade - they surveyed 5k tech professionals last year and ran more than a 100hrs of qualitative interviews. Their conclusion boiled down to one sentence: AI is an amplifier. It doesn't fix anything. It takes whatever's already true about your organization and makes more of it. High-performing teams get faster. Struggling teams get worse, faster. DORA also calls it a mirror, which I think is the same idea from a different angle - it shows you who you already were.
 -->
 
 ---
@@ -1433,7 +1433,7 @@ speakers:
   #   socials:
   #     linkedin: /in/pj-hagerty
   #     github: pjhagerty
-slidesUrl: https://github.com/jerdog/talk-dont-panic-agentic-devops
+slidesUrl: https://speaking.jmeiss.me
 ---
 
 <style>
